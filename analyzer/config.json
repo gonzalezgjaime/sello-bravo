@@ -1,0 +1,6 @@
+{
+  "site": "MLM",
+  "ml_search_limit": 50,
+  "weights": {"demand": 3, "competition": 3, "margin": 2, "seasonality": 1},
+  "currency": "MXN"
+}

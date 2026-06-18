@@ -1,0 +1,12 @@
+{
+  "niches": [
+    {"id": "taza-guadalajara", "name": "Taza Guadalajara / tapatio", "query": "taza guadalajara", "product_type": "mug", "pod_base_cost_mxn": 75, "ship_mxn": 65},
+    {"id": "taza-ingeniero", "name": "Taza humor ingeniero", "query": "taza ingeniero regalo", "product_type": "mug", "pod_base_cost_mxn": 75, "ship_mxn": 65},
+    {"id": "playera-orgullo-mexicano", "name": "Playera orgullo mexicano", "query": "playera orgullo mexicano", "product_type": "tshirt", "pod_base_cost_mxn": 120, "ship_mxn": 70},
+    {"id": "taza-dia-madres", "name": "Taza dia de las madres", "query": "taza dia de las madres", "product_type": "mug", "pod_base_cost_mxn": 75, "ship_mxn": 65},
+    {"id": "playera-dia-muertos", "name": "Playera dia de muertos", "query": "playera dia de muertos", "product_type": "tshirt", "pod_base_cost_mxn": 120, "ship_mxn": 70},
+    {"id": "taza-enfermera", "name": "Taza enfermera regalo", "query": "taza enfermera", "product_type": "mug", "pod_base_cost_mxn": 75, "ship_mxn": 65},
+    {"id": "playera-quinceanera", "name": "Playera personalizada XV anos", "query": "playera quinceanera personalizada", "product_type": "tshirt", "pod_base_cost_mxn": 120, "ship_mxn": 70},
+    {"id": "taza-maestra", "name": "Taza maestra regalo", "query": "taza maestra regalo", "product_type": "mug", "pod_base_cost_mxn": 75, "ship_mxn": 65}
+  ]
+}
