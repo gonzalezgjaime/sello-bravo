@@ -331,7 +331,7 @@ class TestRankAndRender(unittest.TestCase):
         self.data = {
             "candidates": [
                 make_candidate(id="b-lower", name="Lower", capital_usd=10,
-                               scores={k: 3 for k in DIMENSIONS}),   # 3*13 = 39
+                               scores={k: 3 for k in DIMENSIONS}),   # 3*15 = 45
                 make_candidate(id="a-higher", name="Higher"),        # 63
                 make_candidate(id="c-rejected", name="Rejected",
                                capital_usd=900),                     # gated out
@@ -657,10 +657,11 @@ class TestCli(unittest.TestCase):
             self.assertTrue(os.path.exists(out))
             content = open(out).read()
             self.assertIn("# Ranked Shortlist", content)
-            self.assertIn("es-pod-mugs", content.lower().replace(" ", "-") or content)
+            # Top-ranked surviving idea is the POD mugs (score 63).
+            self.assertIn("| 1 | Spanish-language POD mugs/merch |", content)
             # The capital-gated arbitrage idea must appear under Rejected.
-            self.assertIn("Mercado Libre retail arbitrage", content)
             self.assertIn("## Rejected", content)
+            self.assertIn("Mercado Libre retail arbitrage", content)
 
     def test_invalid_payload_returns_2(self):
         with tempfile.TemporaryDirectory() as d:
