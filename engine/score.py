@@ -48,3 +48,45 @@ def score_candidate(candidate, config):
         "rejected": bool(reasons),
         "reject_reasons": reasons,
     }
+
+
+def rank(data, config):
+    """Score all candidates; return (survivors_sorted, rejected)."""
+    scored = [score_candidate(c, config) for c in data["candidates"]]
+    survivors = [s for s in scored if not s["rejected"]]
+    rejected = [s for s in scored if s["rejected"]]
+    survivors.sort(key=lambda s: (-s["score"], s["id"]))
+    return survivors, rejected
+
+
+def render_shortlist(survivors, rejected, data, config):
+    """Render the ranked shortlist as markdown."""
+    by_id = {c["id"]: c for c in data["candidates"]}
+    lo, hi = config["target_mxn_monthly"]
+    lines = ["# Ranked Shortlist", ""]
+    lines.append(
+        f"_Scored {len(survivors) + len(rejected)} candidates; "
+        f"{len(survivors)} passed gates, {len(rejected)} rejected. "
+        f"Target: {lo:,}–{hi:,} MXN/mo._"
+    )
+    lines += ["", "| Rank | Idea | Archetype | Score |", "|---|---|---|---|"]
+    for i, s in enumerate(survivors, 1):
+        lines.append(f"| {i} | {s['name']} | {s['archetype']} | {s['score']} |")
+
+    lines += ["", "## Top 5 — detail"]
+    for s in survivors[:5]:
+        c = by_id[s["id"]]
+        lines += [
+            "",
+            f"### {s['name']}  (score {s['score']})",
+            f"- **Why it fits you:** {c['why_fits_you']}",
+            f"- **First-dollar path:** {c['first_dollar_path']}",
+            f"- **Kill-criteria:** {c['kill_criteria']}",
+        ]
+
+    if rejected:
+        lines += ["", "## Rejected (failed a gate)"]
+        for s in rejected:
+            lines.append(f"- **{s['name']}** — {'; '.join(s['reject_reasons'])}")
+
+    return "\n".join(lines) + "\n"

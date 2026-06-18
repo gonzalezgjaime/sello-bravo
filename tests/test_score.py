@@ -76,5 +76,36 @@ class TestScoreCandidate(unittest.TestCase):
         self.assertTrue(any("scam" in r for r in result["reject_reasons"]))
 
 
+class TestRankAndRender(unittest.TestCase):
+    def setUp(self):
+        self.config = load_config(CONFIG_PATH)
+        self.data = {
+            "candidates": [
+                make_candidate(id="b-lower", name="Lower", capital_usd=10,
+                               scores={k: 3 for k in DIMENSIONS}),   # 3*15 = 45
+                make_candidate(id="a-higher", name="Higher"),        # 63
+                make_candidate(id="c-rejected", name="Rejected",
+                               capital_usd=900),                     # gated out
+            ]
+        }
+
+    def test_rank_orders_survivors_desc_and_excludes_rejected(self):
+        from engine.score import rank
+        survivors, rejected = rank(self.data, self.config)
+        self.assertEqual([s["id"] for s in survivors], ["a-higher", "b-lower"])
+        self.assertEqual([r["id"] for r in rejected], ["c-rejected"])
+
+    def test_render_has_table_top5_and_rejected_sections(self):
+        from engine.score import rank, render_shortlist
+        survivors, rejected = rank(self.data, self.config)
+        md = render_shortlist(survivors, rejected, self.data, self.config)
+        self.assertIn("# Ranked Shortlist", md)
+        self.assertIn("## Top 5", md)
+        self.assertIn("Kill-criteria", md)
+        self.assertIn("Higher", md)
+        self.assertIn("## Rejected", md)
+        self.assertIn("Rejected", md)
+
+
 if __name__ == "__main__":
     unittest.main()
