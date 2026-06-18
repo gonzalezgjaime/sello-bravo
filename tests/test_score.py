@@ -141,5 +141,42 @@ class TestValidateCandidates(unittest.TestCase):
             validate_candidates(bad, self.config)
 
 
+import subprocess
+import sys
+
+
+class TestCli(unittest.TestCase):
+    def test_end_to_end_on_sample_fixture(self):
+        with tempfile.TemporaryDirectory() as d:
+            out = os.path.join(d, "shortlist.md")
+            proc = subprocess.run(
+                [sys.executable, "-m", "engine.score",
+                 os.path.join("tests", "fixtures", "candidates.sample.json"),
+                 "--out", out],
+                capture_output=True, text=True,
+            )
+            self.assertEqual(proc.returncode, 0, proc.stderr)
+            self.assertTrue(os.path.exists(out))
+            content = open(out).read()
+            self.assertIn("# Ranked Shortlist", content)
+            # Top-ranked surviving idea is the POD mugs (score 63).
+            self.assertIn("| 1 | Spanish-language POD mugs/merch |", content)
+            # The capital-gated arbitrage idea must appear under Rejected.
+            self.assertIn("## Rejected", content)
+            self.assertIn("Mercado Libre retail arbitrage", content)
+
+    def test_invalid_payload_returns_2(self):
+        with tempfile.TemporaryDirectory() as d:
+            bad = os.path.join(d, "bad.json")
+            with open(bad, "w") as f:
+                json.dump({"candidates": [{"id": "x"}]}, f)
+            proc = subprocess.run(
+                [sys.executable, "-m", "engine.score", bad,
+                 "--out", os.path.join(d, "out.md")],
+                capture_output=True, text=True,
+            )
+            self.assertEqual(proc.returncode, 2)
+
+
 if __name__ == "__main__":
     unittest.main()

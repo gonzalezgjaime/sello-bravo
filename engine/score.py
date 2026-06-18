@@ -132,3 +132,37 @@ def validate_candidates(data, config):
         raise ValidationError(
             f"Need >= {min_per} candidate(s) per archetype; missing: {short}")
     return True
+
+
+def main(argv=None):
+    import argparse
+    import os
+    import sys
+
+    parser = argparse.ArgumentParser(
+        description="Score and rank solopreneur idea candidates.")
+    parser.add_argument("candidates", help="Path to candidates.json")
+    parser.add_argument(
+        "--config",
+        default=os.path.join(os.path.dirname(__file__), "config.json"))
+    parser.add_argument("--out", default="shortlist.md")
+    args = parser.parse_args(argv)
+
+    config = load_config(args.config)
+    with open(args.candidates) as f:
+        data = json.load(f)
+    try:
+        validate_candidates(data, config)
+    except ValidationError as exc:
+        print(f"Invalid candidates payload: {exc}", file=sys.stderr)
+        return 2
+
+    survivors, rejected = rank(data, config)
+    with open(args.out, "w") as f:
+        f.write(render_shortlist(survivors, rejected, data, config))
+    print(f"Wrote {args.out}: {len(survivors)} ranked, {len(rejected)} rejected.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
