@@ -97,6 +97,8 @@ class TestRankAndRender(unittest.TestCase):
         survivors, rejected = rank(self.data, self.config)
         self.assertEqual([s["id"] for s in survivors], ["a-higher", "b-lower"])
         self.assertEqual([r["id"] for r in rejected], ["c-rejected"])
+        self.assertEqual(survivors[0]["score"], 63)
+        self.assertEqual(survivors[1]["score"], 45)
 
     def test_render_has_table_top5_and_rejected_sections(self):
         from engine.score import rank, render_shortlist
@@ -107,7 +109,16 @@ class TestRankAndRender(unittest.TestCase):
         self.assertIn("Kill-criteria", md)
         self.assertIn("Higher", md)
         self.assertIn("## Rejected", md)
-        self.assertIn("Rejected", md)
+
+    def test_rank_breaks_ties_by_id_ascending(self):
+        from engine.score import rank
+        data = {"candidates": [
+            make_candidate(id="zzz", name="Z"),
+            make_candidate(id="aaa", name="A"),
+        ]}
+        survivors, _ = rank(data, self.config)
+        # identical default scores (63 each) → tie broken by id ascending
+        self.assertEqual([s["id"] for s in survivors], ["aaa", "zzz"])
 
 
 with open(os.path.join("tests", "fixtures", "candidates.sample.json")) as _f:
@@ -139,6 +150,34 @@ class TestValidateCandidates(unittest.TestCase):
     def test_missing_archetype_coverage_raises(self):
         from engine.score import validate_candidates, ValidationError
         bad = {"candidates": [copy.deepcopy(SAMPLE["candidates"][0])]}  # only pod_physical
+        with self.assertRaises(ValidationError):
+            validate_candidates(bad, self.config)
+
+    def test_bool_capital_rejected(self):
+        from engine.score import validate_candidates, ValidationError
+        bad = copy.deepcopy(SAMPLE)
+        bad["candidates"][0]["capital_usd"] = True
+        with self.assertRaises(ValidationError):
+            validate_candidates(bad, self.config)
+
+    def test_negative_capital_rejected(self):
+        from engine.score import validate_candidates, ValidationError
+        bad = copy.deepcopy(SAMPLE)
+        bad["candidates"][0]["capital_usd"] = -5
+        with self.assertRaises(ValidationError):
+            validate_candidates(bad, self.config)
+
+    def test_bool_score_rejected(self):
+        from engine.score import validate_candidates, ValidationError
+        bad = copy.deepcopy(SAMPLE)
+        bad["candidates"][0]["scores"]["distribution"] = True
+        with self.assertRaises(ValidationError):
+            validate_candidates(bad, self.config)
+
+    def test_non_bool_scam_flag_rejected(self):
+        from engine.score import validate_candidates, ValidationError
+        bad = copy.deepcopy(SAMPLE)
+        bad["candidates"][0]["not_scam_legal_safe"] = "yes"
         with self.assertRaises(ValidationError):
             validate_candidates(bad, self.config)
 
