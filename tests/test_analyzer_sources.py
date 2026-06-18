@@ -1,5 +1,8 @@
 import json
+import os
+import tempfile
 import unittest
+from unittest import mock
 
 from analyzer.sources.amazon_research import AmazonResearchSource
 from analyzer.sources.mercadolibre import MercadoLibreSource
@@ -33,21 +36,81 @@ class TestMercadoLibre(unittest.TestCase):
         self.assertEqual(m.price_max_mxn, 249)
         self.assertAlmostEqual(m.top_seller_share, 2 / 3, places=2)
 
-    def test_failed_request_returns_empty_metrics(self):
-        src = MercadoLibreSource(transport=lambda u, h: (500, b""))
-        m = src.analyze_niche(NICHE)
+    def test_hard_fail_marks_est_not_real(self):
+        m = MercadoLibreSource(transport=lambda u, h: (500, b"")).analyze_niche(NICHE)
+        self.assertEqual(m.provenance, "EST")          # no data measured -> EST
         self.assertIsNone(m.listing_count)
-        self.assertIsNone(m.total_sold)
         self.assertIn("failed", m.notes.lower())
+
+    def test_403_retries_with_token_then_succeeds(self):
+        calls = []
+
+        def transport(url, headers):
+            calls.append(headers or {})
+            if (headers or {}).get("Authorization"):
+                return 200, json.dumps(_ml_body()).encode()
+            return 403, b'{"error":"forbidden"}'
+
+        with mock.patch.dict(os.environ, {"ML_TOKEN": "tok"}, clear=False):
+            os.environ.pop("ANALYZER_ML_FIXTURE_DIR", None)
+            m = MercadoLibreSource(transport=transport).analyze_niche(NICHE)
+        self.assertEqual(m.provenance, "REAL")
+        self.assertEqual(m.listing_count, 1234)
+        self.assertEqual(len(calls), 2)               # anon 403, then bearer 200
+
+    def test_403_without_token_is_est_with_actionable_hint(self):
+        with mock.patch.dict(os.environ, {}, clear=False):
+            os.environ.pop("ML_TOKEN", None)
+            os.environ.pop("ANALYZER_ML_FIXTURE_DIR", None)
+            m = MercadoLibreSource(
+                transport=lambda u, h: (403, b'{"error":"forbidden"}')).analyze_niche(NICHE)
+        self.assertEqual(m.provenance, "EST")
+        self.assertIn("ML_TOKEN", m.notes)
+
+    def test_no_sold_quantity_yields_none_demand(self):
+        body = {"paging": {"total": 10},
+                "results": [{"price": 200, "seller": {"id": 1}}]}  # no sold_quantity
+        m = MercadoLibreSource(
+            transport=lambda u, h: (200, json.dumps(body).encode())).analyze_niche(NICHE)
+        self.assertIsNone(m.total_sold)                # unmeasured, not 0
+        self.assertEqual(m.price_median_mxn, 200)
+
+    def test_non_mxn_prices_excluded(self):
+        body = {"paging": {"total": 2},
+                "results": [{"price": 50, "currency_id": "USD", "seller": {"id": 1}},
+                            {"price": 200, "currency_id": "MXN", "seller": {"id": 2}}]}
+        m = MercadoLibreSource(
+            transport=lambda u, h: (200, json.dumps(body).encode())).analyze_niche(NICHE)
+        self.assertEqual(m.price_median_mxn, 200)      # USD listing dropped
 
     def test_missing_fields_are_tolerated(self):
         body = {"paging": {}, "results": [{"title": "no price no seller"}]}
-        src = MercadoLibreSource(transport=lambda u, h: (200, json.dumps(body).encode()))
-        m = src.analyze_niche(NICHE)
+        m = MercadoLibreSource(
+            transport=lambda u, h: (200, json.dumps(body).encode())).analyze_niche(NICHE)
         self.assertIsNone(m.listing_count)
         self.assertIsNone(m.price_median_mxn)
         self.assertIsNone(m.top_seller_share)
-        self.assertEqual(m.total_sold, 0)
+        self.assertIsNone(m.total_sold)
+
+    def test_fixture_hit_loads_offline(self):
+        with tempfile.TemporaryDirectory() as d:
+            with open(os.path.join(d, NICHE["id"] + ".json"), "w") as f:
+                json.dump(_ml_body(), f)
+            with mock.patch.dict(os.environ, {"ANALYZER_ML_FIXTURE_DIR": d}):
+                # transport would raise if reached -> proves no network on a hit
+                m = MercadoLibreSource(
+                    transport=lambda u, h: (_ for _ in ()).throw(
+                        AssertionError("network used"))).analyze_niche(NICHE)
+        self.assertEqual(m.listing_count, 1234)
+
+    def test_fixture_miss_is_offline_not_network(self):
+        def boom(url, headers):
+            raise AssertionError("network called in fixture mode")
+        with tempfile.TemporaryDirectory() as d:  # empty dir -> every niche misses
+            with mock.patch.dict(os.environ, {"ANALYZER_ML_FIXTURE_DIR": d}):
+                m = MercadoLibreSource(transport=boom).analyze_niche(NICHE)
+        self.assertEqual(m.provenance, "EST")
+        self.assertIsNone(m.listing_count)
 
 
 class TestAmazonResearch(unittest.TestCase):

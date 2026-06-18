@@ -3,28 +3,38 @@
 Rule: REAL signals are preferred over EST. For each niche we pick the first REAL
 ``total_sold`` (demand), REAL ``listing_count`` (competition), and REAL
 ``price_median_mxn`` (for margin); seasonality comes from whichever source
-provides it. Components are min-max normalized across the niches in the run, then
-weighted. Competition contributes inverted (less competition = higher score).
-Ties break by ``niche_id`` ascending.
+provides it.
+
+Missing-data policy (uniform across demand/competition/margin): a value that was
+**not measured** for a niche, or a dimension that is **uninformative** (every
+niche has the same value), normalizes to a NEUTRAL 0.5 — never to best or worst.
+This stops data-less niches from being rewarded (missing competition) or punished
+(missing demand), and stops a dead/constant signal (e.g. Mercado Libre's stripped
+``sold_quantity``) from silently maxing out the score. Competition contributes
+inverted (less competition = higher). Ties break by ``niche_id`` ascending.
 """
 from analyzer.base import OpportunityScore
 
 DIMENSIONS = ("demand", "competition", "margin", "seasonality")
+NEUTRAL = 0.5  # score for a missing or uninformative (all-equal) dimension
 
 
 def _normalize(items):
-    """Min-max normalize ``[(id, value|None), ...]`` -> ``{id: 0..1}`` (None -> 0.0)."""
-    nums = [v for _, v in items if v is not None]
-    if not nums:
-        return {i: 0.0 for i, _ in items}
-    lo, hi = min(nums), max(nums)
+    """Min-max normalize ``[(id, value|None), ...]`` -> ``{id: 0..1}``.
+
+    Missing values (None) and uninformative series (all measured values equal)
+    map to ``NEUTRAL`` (0.5), so absence/constancy is neither rewarded nor
+    punished. Only genuinely-measured, varying values span the full 0..1 range.
+    """
+    measured = [v for _, v in items if v is not None]
+    if not measured:
+        return {i: NEUTRAL for i, _ in items}
+    lo, hi = min(measured), max(measured)
     span = hi - lo
     out = {}
     for i, v in items:
-        if v is None:
-            out[i] = 0.0
-        elif span == 0:
-            out[i] = 1.0
+        if v is None or span == 0:
+            out[i] = NEUTRAL
         else:
             out[i] = (v - lo) / span
     return out
@@ -60,7 +70,7 @@ def synthesize(metrics_by_niche, niches, config):
         demand[nid] = d_real
         competition[nid] = c_real
         margin[nid] = unit_margin
-        season[nid] = s_fit if s_fit is not None else 0.0
+        season[nid] = s_fit if s_fit is not None else NEUTRAL
         prov[nid] = "REAL" if (d_real is not None or c_real is not None
                                or price is not None) else "EST"
         raw[nid] = {
