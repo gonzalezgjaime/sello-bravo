@@ -90,3 +90,45 @@ def render_shortlist(survivors, rejected, data, config):
             lines.append(f"- **{s['name']}** — {'; '.join(s['reject_reasons'])}")
 
     return "\n".join(lines) + "\n"
+
+
+class ValidationError(ValueError):
+    """Raised when a candidates payload violates the engine schema."""
+
+
+_REQUIRED_FIELDS = (
+    "id", "name", "archetype", "capital_usd", "not_scam_legal_safe",
+    "scores", "evidence", "why_fits_you", "first_dollar_path", "kill_criteria",
+)
+
+
+def validate_candidates(data, config):
+    """Validate a candidates payload against the engine schema. Returns True or raises."""
+    if not isinstance(data.get("candidates"), list):
+        raise ValidationError("Top-level 'candidates' list is required")
+    archetypes = set(config["archetypes"])
+    counts = {}
+    for i, c in enumerate(data["candidates"]):
+        where = f"candidate[{i}] ({c.get('id', '?')})"
+        for field in _REQUIRED_FIELDS:
+            if field not in c:
+                raise ValidationError(f"{where}: missing '{field}'")
+        if c["archetype"] not in archetypes:
+            raise ValidationError(f"{where}: unknown archetype '{c['archetype']}'")
+        if not isinstance(c["capital_usd"], (int, float)) or isinstance(c["capital_usd"], bool) or c["capital_usd"] < 0:
+            raise ValidationError(f"{where}: capital_usd must be a non-negative number")
+        if not isinstance(c["not_scam_legal_safe"], bool):
+            raise ValidationError(f"{where}: not_scam_legal_safe must be boolean")
+        scores = c["scores"]
+        if not isinstance(scores, dict) or set(scores) != set(DIMENSIONS):
+            raise ValidationError(f"{where}: scores must cover exactly the 7 dimensions")
+        for dim, val in scores.items():
+            if isinstance(val, bool) or not isinstance(val, int) or not (1 <= val <= 5):
+                raise ValidationError(f"{where}: score '{dim}' must be int 1-5")
+        counts[c["archetype"]] = counts.get(c["archetype"], 0) + 1
+    min_per = config.get("min_candidates_per_archetype", 1)
+    short = sorted(a for a in archetypes if counts.get(a, 0) < min_per)
+    if short:
+        raise ValidationError(
+            f"Need >= {min_per} candidate(s) per archetype; missing: {short}")
+    return True

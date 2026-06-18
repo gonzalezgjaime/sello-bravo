@@ -1,0 +1,88 @@
+{
+  "candidates": [
+    {
+      "id": "es-pod-mugs",
+      "name": "Spanish-language POD mugs/merch",
+      "archetype": "pod_physical",
+      "capital_usd": 50,
+      "not_scam_legal_safe": true,
+      "scores": {"runs_on_its_own": 4, "leverages_advantage": 5, "distribution": 5, "demand_evidence": 4, "time_to_first_dollar": 4, "revenue_ceiling": 3, "defensibility": 2},
+      "evidence": "Marketplaces give built-in buyers; proven prior MX mug sales.",
+      "why_fits_you": "Repeats your proven MX playbook with ES designs and your bilingual edge.",
+      "first_dollar_path": "List 20 ES mug designs on Mercado Libre + Etsy via Printful.",
+      "kill_criteria": "Drop if no sale within 4 weeks of 20 live designs."
+    },
+    {
+      "id": "pod-seller-tool",
+      "name": "Micro-tool for POD/Amazon sellers",
+      "archetype": "micro_saas",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {"runs_on_its_own": 5, "leverages_advantage": 4, "distribution": 3, "demand_evidence": 3, "time_to_first_dollar": 3, "revenue_ceiling": 4, "defensibility": 3},
+      "evidence": "Active POD seller communities; you are your own first user.",
+      "why_fits_you": "Sells to a market you already operate in; built with Claude Code.",
+      "first_dollar_path": "Ship a listing/keyword generator; sell in 2 POD seller groups.",
+      "kill_criteria": "Drop if <5 paying users within 8 weeks of launch."
+    },
+    {
+      "id": "es-prompt-packs",
+      "name": "Spanish-language prompt/template packs",
+      "archetype": "digital_product",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {"runs_on_its_own": 5, "leverages_advantage": 4, "distribution": 3, "demand_evidence": 3, "time_to_first_dollar": 4, "revenue_ceiling": 2, "defensibility": 1},
+      "evidence": "Growing LATAM creator/SMB demand; thin ES-language supply.",
+      "why_fits_you": "Pure compounding asset; leans on your ES edge; near-zero touch.",
+      "first_dollar_path": "Publish a pack on Gumroad; seed in LATAM creator communities.",
+      "kill_criteria": "Drop if <10 sales within 8 weeks."
+    },
+    {
+      "id": "es-newsletter",
+      "name": "Faceless ES-language niche newsletter",
+      "archetype": "content_audience",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {"runs_on_its_own": 2, "leverages_advantage": 4, "distribution": 3, "demand_evidence": 2, "time_to_first_dollar": 2, "revenue_ceiling": 4, "defensibility": 2},
+      "evidence": "Underserved ES niches; sponsorship monetization at scale.",
+      "why_fits_you": "High ceiling but higher ongoing touch; ES edge applies.",
+      "first_dollar_path": "Launch on beehiiv; grow to first sponsor slot.",
+      "kill_criteria": "Drop if <500 subs within 12 weeks."
+    },
+    {
+      "id": "claude-automation-setups",
+      "name": "Productized Claude automation setups for SMBs",
+      "archetype": "productized_service",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {"runs_on_its_own": 1, "leverages_advantage": 5, "distribution": 3, "demand_evidence": 5, "time_to_first_dollar": 5, "revenue_ceiling": 2, "defensibility": 1},
+      "evidence": "Strong SMB demand; fastest cash but time-for-money.",
+      "why_fits_you": "Maximal use of your automation skill; fast first dollar.",
+      "first_dollar_path": "Sell one $400 automation setup to a local SMB.",
+      "kill_criteria": "Drop as a *core* stream if it can't be productized to <3 hrs/wk."
+    },
+    {
+      "id": "ml-arbitrage",
+      "name": "Mercado Libre retail arbitrage",
+      "archetype": "marketplace_arbitrage",
+      "capital_usd": 350,
+      "not_scam_legal_safe": true,
+      "scores": {"runs_on_its_own": 2, "leverages_advantage": 3, "distribution": 4, "demand_evidence": 3, "time_to_first_dollar": 4, "revenue_ceiling": 2, "defensibility": 1},
+      "evidence": "Works, but requires inventory purchase up front.",
+      "why_fits_you": "Familiar marketplace, but needs capital beyond your ceiling.",
+      "first_dollar_path": "Buy & relist discounted stock.",
+      "kill_criteria": "N/A — exceeds capital ceiling."
+    },
+    {
+      "id": "smb-whatsapp-agent",
+      "name": "WhatsApp FAQ/booking agent for LATAM SMBs",
+      "archetype": "automation_agent",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {"runs_on_its_own": 3, "leverages_advantage": 4, "distribution": 2, "demand_evidence": 4, "time_to_first_dollar": 3, "revenue_ceiling": 3, "defensibility": 2},
+      "evidence": "WhatsApp dominates LATAM SMB comms; clear pain point.",
+      "why_fits_you": "Automation + ES market; monthly retainer potential.",
+      "first_dollar_path": "Deploy one agent for a local business on a small retainer.",
+      "kill_criteria": "Drop if <2 paying clients within 10 weeks."
+    }
+  ]
+}

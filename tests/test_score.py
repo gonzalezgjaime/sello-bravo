@@ -1,3 +1,4 @@
+import copy
 import json
 import os
 import tempfile
@@ -105,6 +106,39 @@ class TestRankAndRender(unittest.TestCase):
         self.assertIn("Higher", md)
         self.assertIn("## Rejected", md)
         self.assertIn("Rejected", md)
+
+
+with open(os.path.join("tests", "fixtures", "candidates.sample.json")) as _f:
+    SAMPLE = json.load(_f)
+
+
+class TestValidateCandidates(unittest.TestCase):
+    def setUp(self):
+        self.config = load_config(CONFIG_PATH)
+
+    def test_sample_fixture_is_valid(self):
+        from engine.score import validate_candidates
+        self.assertTrue(validate_candidates(copy.deepcopy(SAMPLE), self.config))
+
+    def test_out_of_range_score_raises(self):
+        from engine.score import validate_candidates, ValidationError
+        bad = copy.deepcopy(SAMPLE)
+        bad["candidates"][0]["scores"]["distribution"] = 6
+        with self.assertRaises(ValidationError):
+            validate_candidates(bad, self.config)
+
+    def test_unknown_archetype_raises(self):
+        from engine.score import validate_candidates, ValidationError
+        bad = copy.deepcopy(SAMPLE)
+        bad["candidates"][0]["archetype"] = "crypto_moonshot"
+        with self.assertRaises(ValidationError):
+            validate_candidates(bad, self.config)
+
+    def test_missing_archetype_coverage_raises(self):
+        from engine.score import validate_candidates, ValidationError
+        bad = {"candidates": [copy.deepcopy(SAMPLE["candidates"][0])]}  # only pod_physical
+        with self.assertRaises(ValidationError):
+            validate_candidates(bad, self.config)
 
 
 if __name__ == "__main__":
