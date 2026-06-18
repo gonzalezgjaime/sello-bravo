@@ -3,6 +3,17 @@
   "build_hours_per_week": 8,
   "steady_state_hours_per_week_per_stream": 3,
   "target_mxn_monthly": [30000, 50000],
+  "market_scope": "Mexico (MX) ONLY for now. Target Mexican consumers/businesses in Spanish. Do NOT target the US, US-Hispanic, or other markets.",
+  "legal_note": "No active US LLC (Delaware entity lapsed for non-payment). Do NOT rely on US-only seller programs that need US tax/entity standing (e.g. Merch by Amazon, which sells on amazon.com, not amazon.com.mx). Operate as a Mexico-based seller (RFC) on MX-accessible channels.",
+  "target_channels": [
+    "Mercado Libre (dominant MX marketplace)",
+    "Amazon Mexico (amazon.com.mx)",
+    "Etsy (digital + POD; smaller MX buyer base)",
+    "Hotmart / Kiwify (LATAM digital products & courses)",
+    "Gumroad (digital, international payout)",
+    "Tiendanube or own Shopify for MX with MercadoPago checkout"
+  ],
+  "market_analysis_requirement": "For ANY marketplace stream, run Helium-10-grade market analysis BEFORE committing: MX demand/search-volume signals, competition (listing counts, top-seller review/sales signals, saturation), MXN pricing & net margin (incl. POD base cost + MX fulfillment/shipping), keyword/niche gaps, and MX seasonality (El Buen Fin, Hot Sale, Dia de las Madres May 10, Navidad/Reyes, Dia de Muertos).",
   "unfair_advantages": [
     "Proven physical-product / Amazon operator at scale (prior mug venture ~$100k first month)",
     "Expert Claude / automation builder",
@@ -11,6 +22,7 @@
   "hard_nos": [
     "Scam- or get-rich-quick-adjacent ideas",
     "Anything requiring employees",
-    "Anything requiring large paid-ad spend to work"
+    "Anything requiring large paid-ad spend to work",
+    "Anything that depends on the US market or a US legal entity (out of scope for now)"
   ]
 }
