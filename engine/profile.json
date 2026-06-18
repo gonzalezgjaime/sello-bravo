@@ -1,0 +1,16 @@
+{
+  "capital_note": "Hard ceiling is config.capital_ceiling_usd (USD 200). Prefer ~$0 start.",
+  "build_hours_per_week": 8,
+  "steady_state_hours_per_week_per_stream": 3,
+  "target_mxn_monthly": [30000, 50000],
+  "unfair_advantages": [
+    "Proven physical-product / Amazon operator at scale (prior mug venture ~$100k first month)",
+    "Expert Claude / automation builder",
+    "Bilingual EN/ES with proven Mexico-market sales success (less competition in ES-language niches)"
+  ],
+  "hard_nos": [
+    "Scam- or get-rich-quick-adjacent ideas",
+    "Anything requiring employees",
+    "Anything requiring large paid-ad spend to work"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "capital_ceiling_usd": 200,
+  "target_mxn_monthly": [30000, 50000],
+  "archetypes": [
+    "productized_service",
+    "micro_saas",
+    "digital_product",
+    "pod_physical",
+    "content_audience",
+    "marketplace_arbitrage",
+    "automation_agent"
+  ],
+  "min_candidates_per_archetype": 1,
+  "weights": {
+    "runs_on_its_own": 3,
+    "leverages_advantage": 3,
+    "distribution": 3,
+    "demand_evidence": 2,
+    "time_to_first_dollar": 2,
+    "revenue_ceiling": 1,
+    "defensibility": 1
+  }
+}
