@@ -1,0 +1,364 @@
+{
+  "candidates": [
+    {
+      "id": "claude-automation-productized",
+      "name": "Claude Automation Setup — Productized Service for Mexican SMBs",
+      "archetype": "productized_service",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 2,
+        "leverages_advantage": 5,
+        "distribution": 4,
+        "demand_evidence": 4,
+        "time_to_first_dollar": 5,
+        "revenue_ceiling": 4,
+        "defensibility": 4
+      },
+      "evidence": "LATAM AI market growing 37% CAGR to $504B by 2034; Mexican SMBs adopting AI agents faster than legacy markets; Claude for Small Business launched May 2026 with 15 ready workflows.",
+      "why_fits_you": "You are an expert Claude automator with bilingual EN/ES skills and proven Mexico-market access — almost no competition in Spanish-language AI setup services.",
+      "first_dollar_path": "Post a fixed-scope 'AI Workflow Setup in 5 Days — MX $4,500' offer in LinkedIn Mexico groups and a couple of local chambers of commerce Facebook groups; close first client via DM.",
+      "kill_criteria": "Drop if no paying client by week 4."
+    },
+    {
+      "id": "bilingual-content-repurposing-service",
+      "name": "Bilingual Content Repurposing Service (EN→ES) for Creators",
+      "archetype": "productized_service",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 3,
+        "leverages_advantage": 4,
+        "distribution": 4,
+        "demand_evidence": 3,
+        "time_to_first_dollar": 5,
+        "revenue_ceiling": 3,
+        "defensibility": 3
+      },
+      "evidence": "Spanish-language YouTube CPMs are lower but underserved creator market is large; US English creators increasingly want LATAM reach; bilingual content packages priced $500–$1500/mo are common on Contra and Fiverr Pro.",
+      "why_fits_you": "Bilingual EN/ES + Claude automation lets you deliver in half the time at better quality than generic translators.",
+      "first_dollar_path": "Pitch three English-speaking YouTubers in the business/tech niche on a free trial clip translated into Spanish; convert one to $600/mo retainer.",
+      "kill_criteria": "Drop if no paid retainer by week 6."
+    },
+    {
+      "id": "amazon-listing-optimizer-service",
+      "name": "Amazon Listing Optimization Service for ES-Language Sellers",
+      "archetype": "productized_service",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 2,
+        "leverages_advantage": 5,
+        "distribution": 4,
+        "demand_evidence": 4,
+        "time_to_first_dollar": 5,
+        "revenue_ceiling": 3,
+        "defensibility": 3
+      },
+      "evidence": "Amazon Mexico (amazon.com.mx) has grown strongly; sellers constantly struggle with bilingual SEO copy; Helium 10 forums and FB Amazon seller groups in Mexico are active with this pain.",
+      "why_fits_you": "Prior ~$100k/mo Amazon scale gives you instant credibility; Claude automation cuts time to deliver a listing pack to under an hour.",
+      "first_dollar_path": "Post a '$149 Amazon Listing Rewrite — EN+ES' offer in Amazon Sellers Mexico Facebook group; deliver first client within 48 hours.",
+      "kill_criteria": "Drop if no paid order by week 3."
+    },
+    {
+      "id": "pod-mexican-niche-merch",
+      "name": "Merch by Amazon — Mexican/LATAM Niche POD Designs",
+      "archetype": "pod_physical",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 5,
+        "leverages_advantage": 5,
+        "distribution": 5,
+        "demand_evidence": 5,
+        "time_to_first_dollar": 4,
+        "revenue_ceiling": 4,
+        "defensibility": 2
+      },
+      "evidence": "Mexico POD market $273M in 2025 growing at 22.4% CAGR; Merch by Amazon provides built-in distribution to millions; Mexican cultural/bilingual niches are underserved on the platform.",
+      "why_fits_you": "Proven Amazon operator at prior ~$100k/mo scale; you understand niching, keyword research, and Amazon's algorithm better than 99% of new POD entrants.",
+      "first_dollar_path": "Upload 10 designs targeting underserved Mexican cultural niches (eg 'Guadalajara engineer mug', 'charro humor tee') to Merch by Amazon within day 1.",
+      "kill_criteria": "Drop if fewer than 3 organic sales after 60 designs uploaded by week 8."
+    },
+    {
+      "id": "printify-shopify-pod-us-hispanic",
+      "name": "Printify + Shopify Store — US Hispanic Market Niche",
+      "archetype": "pod_physical",
+      "capital_usd": 29,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 4,
+        "leverages_advantage": 5,
+        "distribution": 3,
+        "demand_evidence": 4,
+        "time_to_first_dollar": 3,
+        "revenue_ceiling": 4,
+        "defensibility": 3
+      },
+      "evidence": "Printful Mexico fulfillment available; US Hispanic market 62M people buying culturally resonant merch; Etsy + Shopify combo common path to $1k+/mo with zero inventory.",
+      "why_fits_you": "Deep Amazon/POD operations experience means you know which niches convert; bilingual allows authentic cultural design angles others miss.",
+      "first_dollar_path": "Launch a Shopify store ($29/mo) with 20 Printify designs targeting US-Hispanic 'Chicano pride' or 'Mexican engineer' niches; seed with Etsy organic and Pinterest pins.",
+      "kill_criteria": "Drop if no sale within 45 days of launch."
+    },
+    {
+      "id": "pod-etsy-spanish-affirmation",
+      "name": "Etsy POD — Spanish Affirmation Prints & Planners",
+      "archetype": "pod_physical",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 4,
+        "leverages_advantage": 3,
+        "distribution": 4,
+        "demand_evidence": 4,
+        "time_to_first_dollar": 4,
+        "revenue_ceiling": 3,
+        "defensibility": 2
+      },
+      "evidence": "Etsy digital download + POD prints in Spanish affirmation niche have 1k+ reviews on top sellers; low competition vs English equivalents; $5–$15 price point, high volume.",
+      "why_fits_you": "Native Spanish + Claude for rapid design generation; Etsy's built-in SEO discovery removes paid-ad dependency.",
+      "first_dollar_path": "List 15 Spanish-language printable wall art designs on Etsy using free Printify integration; optimize titles with Etsy Spanish keyword research.",
+      "kill_criteria": "Drop if fewer than 5 sales by week 8."
+    },
+    {
+      "id": "whatsapp-ai-agent-saas",
+      "name": "WhatsApp AI Agent SaaS for Mexican Small Businesses",
+      "archetype": "micro_saas",
+      "capital_usd": 20,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 4,
+        "leverages_advantage": 5,
+        "distribution": 3,
+        "demand_evidence": 4,
+        "time_to_first_dollar": 3,
+        "revenue_ceiling": 5,
+        "defensibility": 4
+      },
+      "evidence": "WhatsApp penetration in Mexico >90%; Mexican SMBs receive most customer inquiries via WhatsApp; LATAM AI market 37% CAGR with SMBs adopting AI faster than global average.",
+      "why_fits_you": "Expert Claude automation builder + bilingual + proven Mexico-market experience = you can build and sell this faster than any gringo competitor.",
+      "first_dollar_path": "Build MVP in 2 weeks using Claude API + WhatsApp Business API ($20/mo); pitch 5 local restaurants or retail shops; charge $499 MXN/mo per client.",
+      "kill_criteria": "Drop if fewer than 3 paying clients by week 12."
+    },
+    {
+      "id": "etsy-seller-ai-assistant-saas",
+      "name": "Etsy Listing AI Assistant — Micro SaaS for POD Sellers",
+      "archetype": "micro_saas",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 5,
+        "leverages_advantage": 4,
+        "distribution": 3,
+        "demand_evidence": 3,
+        "time_to_first_dollar": 3,
+        "revenue_ceiling": 3,
+        "defensibility": 3
+      },
+      "evidence": "Etsy has 8M+ active sellers; AI listing optimization tools like EverBee and Alura are $20–$40/mo SaaS; a Spanish-language version targeting LATAM Etsy sellers is a white-space gap.",
+      "why_fits_you": "Your POD/Amazon operator experience means you can build a tool you personally need and validate quickly with your own stores.",
+      "first_dollar_path": "Build a Claude-powered Etsy title/tag generator as a web app; launch on Product Hunt with a $9/mo early-bird; target Etsy seller Facebook groups.",
+      "kill_criteria": "Drop if fewer than 20 paying users by week 12."
+    },
+    {
+      "id": "amazon-seller-es-research-saas",
+      "name": "Amazon Product Research SaaS — Spanish-Language Interface",
+      "archetype": "micro_saas",
+      "capital_usd": 50,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 4,
+        "leverages_advantage": 5,
+        "distribution": 3,
+        "demand_evidence": 3,
+        "time_to_first_dollar": 2,
+        "revenue_ceiling": 4,
+        "defensibility": 4
+      },
+      "evidence": "Amazon.com.mx growing; existing research tools (Jungle Scout, Helium 10) are English-first and priced in USD; LATAM sellers want affordable Spanish-native tooling.",
+      "why_fits_you": "Deep Amazon operator knowledge means you can build for the actual pain points; bilingual means you can market where competitors can't reach.",
+      "first_dollar_path": "Build an MVP that queries Amazon Mexico BSR data and generates Spanish keyword reports; charge $199 MXN/mo; launch in Amazon sellers Mexico group.",
+      "kill_criteria": "Drop if fewer than 10 paying subscribers by week 16."
+    },
+    {
+      "id": "claude-automation-prompts-pack",
+      "name": "Claude Automation Prompt Pack for Mexican Entrepreneurs",
+      "archetype": "digital_product",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 5,
+        "leverages_advantage": 5,
+        "distribution": 4,
+        "demand_evidence": 4,
+        "time_to_first_dollar": 5,
+        "revenue_ceiling": 3,
+        "defensibility": 3
+      },
+      "evidence": "Claude for Small Business launched May 2026; Spanish-language AI prompt packs are scarce on Gumroad/Etsy; demand for Claude-specific prompts spiked with the business launch.",
+      "why_fits_you": "You are an expert Claude automator — you can curate 50 battle-tested prompts for Mexican business contexts that nobody else in Spanish can match.",
+      "first_dollar_path": "List a $15 'Pack de 50 Prompts de Claude para Negocios Mexicanos' on Gumroad today; share in 3 WhatsApp emprendedores groups and LinkedIn.",
+      "kill_criteria": "Drop if fewer than 20 sales by week 4."
+    },
+    {
+      "id": "notion-business-template-es",
+      "name": "Notion Business OS Templates in Spanish",
+      "archetype": "digital_product",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 5,
+        "leverages_advantage": 3,
+        "distribution": 4,
+        "demand_evidence": 4,
+        "time_to_first_dollar": 5,
+        "revenue_ceiling": 3,
+        "defensibility": 2
+      },
+      "evidence": "Notion template sellers earn $500–$10k+/mo; Spanish Notion templates are underdeveloped vs English; Gumroad + Etsy combo provides zero-ad discovery.",
+      "why_fits_you": "Claude automation lets you build and document templates 10x faster; bilingual means you occupy an underserved niche with less competition.",
+      "first_dollar_path": "Build a 'Sistema de Negocio Notion' template pack in 3 days; list at $19 on Gumroad; post in Notion LATAM and emprendedores Facebook groups.",
+      "kill_criteria": "Drop if fewer than 15 sales by week 6."
+    },
+    {
+      "id": "amazon-fba-guide-es-course",
+      "name": "Amazon FBA desde Cero — Spanish Video Course",
+      "archetype": "digital_product",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 4,
+        "leverages_advantage": 5,
+        "distribution": 3,
+        "demand_evidence": 4,
+        "time_to_first_dollar": 3,
+        "revenue_ceiling": 4,
+        "defensibility": 3
+      },
+      "evidence": "Prior ~$100k/mo Amazon month gives you rare proof; Spanish-language Amazon FBA courses command $97–$497 and have eager buyers in Mexico/LATAM entrepreneurship communities.",
+      "why_fits_you": "You have real Amazon operator credibility that 99% of course creators in Spanish lack — your proof story is the marketing.",
+      "first_dollar_path": "Record a free 20-min YouTube video sharing the $100k month story; add a CTA to a $97 Gumroad course pre-sale; validate before recording all modules.",
+      "kill_criteria": "Drop if fewer than 10 pre-sales before full course is recorded (by week 8)."
+    },
+    {
+      "id": "spanish-youtube-business-channel",
+      "name": "YouTube Channel — Claude y IA para Negocios (Spanish)",
+      "archetype": "content_audience",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 3,
+        "leverages_advantage": 5,
+        "distribution": 4,
+        "demand_evidence": 3,
+        "time_to_first_dollar": 2,
+        "revenue_ceiling": 5,
+        "defensibility": 4
+      },
+      "evidence": "Spanish YouTube business/AI niche is underdeveloped vs English; Mexico CPM $1–2 with US Hispanic advertisers bidding up inventory; top Spanish channels in AI/biz hitting 100k+ subs with under 50 videos.",
+      "why_fits_you": "Expert Claude automator + bilingual + proven Mexico sales success = authentic authority in the fastest-growing Spanish content category.",
+      "first_dollar_path": "Publish 4 videos in month 1 targeting 'Claude IA para negocios' keyword cluster; monetize via affiliate links to Claude API + digital products before YPP.",
+      "kill_criteria": "Drop if fewer than 500 subscribers by week 16."
+    },
+    {
+      "id": "spanish-newsletter-ia-negocios",
+      "name": "Newsletter — IA para Emprendedores Mexicanos",
+      "archetype": "content_audience",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 3,
+        "leverages_advantage": 4,
+        "distribution": 3,
+        "demand_evidence": 3,
+        "time_to_first_dollar": 3,
+        "revenue_ceiling": 3,
+        "defensibility": 3
+      },
+      "evidence": "Paid newsletter market growing; Beehiiv Spanish newsletters in business niche charging $5–$10/mo subscriptions; AI-for-business Spanish newsletters rare despite massive LATAM audience.",
+      "why_fits_you": "Claude automation cuts newsletter production time to ~2 hours/week; bilingual expertise means you can curate both English and Spanish AI news for LATAM entrepreneurs.",
+      "first_dollar_path": "Launch on Beehiiv free tier; publish 2 issues; promote in WhatsApp entrepreneur groups; add paid tier at $4.99/mo after 200 free subs.",
+      "kill_criteria": "Drop if fewer than 200 free subscribers by week 8."
+    },
+    {
+      "id": "digital-arbitrage-kindle-es",
+      "name": "Kindle Publishing Arbitrage — Spanish-Language Low-Content Books",
+      "archetype": "marketplace_arbitrage",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 4,
+        "leverages_advantage": 3,
+        "distribution": 4,
+        "demand_evidence": 4,
+        "time_to_first_dollar": 4,
+        "revenue_ceiling": 3,
+        "defensibility": 2
+      },
+      "evidence": "Amazon KDP low-content books (planners, journals, activity books) in Spanish are high-demand; English-language creators dominate, Spanish is underserved; Claude generates interiors instantly.",
+      "why_fits_you": "Amazon operator expertise + Claude = you can flood a low-competition niche with optimized listings faster than any manual creator.",
+      "first_dollar_path": "Use Claude to generate 5 Spanish-language activity/planner interiors; upload to KDP free; target 'planificador en español' and 'libreta de actividades' keywords.",
+      "kill_criteria": "Drop if fewer than $50 royalties by week 8 after 20 books published."
+    },
+    {
+      "id": "etsy-digital-download-arbitrage",
+      "name": "Etsy Digital Download Arbitrage — Spanish Wedding & Party Printables",
+      "archetype": "marketplace_arbitrage",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 4,
+        "leverages_advantage": 3,
+        "distribution": 4,
+        "demand_evidence": 4,
+        "time_to_first_dollar": 5,
+        "revenue_ceiling": 3,
+        "defensibility": 2
+      },
+      "evidence": "Spanish wedding/quinceañera printables on Etsy have 500–5k+ reviews on top sellers; $3–$8 digital downloads, zero marginal cost; Claude + Canva can produce a pack in hours.",
+      "why_fits_you": "Zero-inventory, Claude-assisted production, Etsy organic discovery — aligns with your constraints and delivers fast feedback.",
+      "first_dollar_path": "Create 10 Spanish wedding invitation/save-the-date digital templates with Claude + Canva; list at $4.99 each on Etsy; optimize for 'invitaciones de boda editables' search.",
+      "kill_criteria": "Drop if fewer than 10 sales by week 6."
+    },
+    {
+      "id": "ai-agent-whatsapp-followup",
+      "name": "Automated WhatsApp Follow-Up Agent for Sales Teams (Mexico)",
+      "archetype": "automation_agent",
+      "capital_usd": 20,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 5,
+        "leverages_advantage": 5,
+        "distribution": 4,
+        "demand_evidence": 4,
+        "time_to_first_dollar": 4,
+        "revenue_ceiling": 5,
+        "defensibility": 4
+      },
+      "evidence": "WhatsApp dominates Mexican B2B/B2C sales; Gartner projects 40% of enterprise apps will include AI agents by 2026; Mexican SMBs are skipping legacy CRMs and jumping straight to AI-native tools.",
+      "why_fits_you": "Expert Claude automator + bilingual + deep Mexico market experience = you can build, sell, and support a Spanish-native AI agent with no credible local competition.",
+      "first_dollar_path": "Build a WhatsApp follow-up automation using Claude API + Twilio ($20/mo); demo to 3 local real estate agencies or car dealerships; charge $1,500 MXN/mo per client.",
+      "kill_criteria": "Drop if fewer than 3 paying clients by week 10."
+    },
+    {
+      "id": "ai-content-agent-social-es",
+      "name": "AI Social Content Agent — Weekly Spanish Social Pack Subscription",
+      "archetype": "automation_agent",
+      "capital_usd": 0,
+      "not_scam_legal_safe": true,
+      "scores": {
+        "runs_on_its_own": 5,
+        "leverages_advantage": 5,
+        "distribution": 4,
+        "demand_evidence": 4,
+        "time_to_first_dollar": 4,
+        "revenue_ceiling": 4,
+        "defensibility": 3
+      },
+      "evidence": "Spanish-speaking SMBs need weekly social content but can't afford full agencies; Claude API produces 20-post monthly packs in minutes; $199–$499/mo subscriptions common on Contra for comparable services.",
+      "why_fits_you": "Claude automation expertise means marginal cost per client is ~$2/mo in API fees; bilingual quality outperforms generic AI tools for Spanish-native content.",
+      "first_dollar_path": "Build a Claude-powered pipeline that ingests a business brief and outputs 20 social posts per month; sell as a $299 MXN/mo subscription to 5 local businesses via WhatsApp outreach.",
+      "kill_criteria": "Drop if fewer than 5 paying subscribers by week 8."
+    }
+  ]
+}
