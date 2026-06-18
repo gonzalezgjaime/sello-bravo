@@ -1,6 +1,8 @@
 import copy
 import json
 import os
+import subprocess
+import sys
 import tempfile
 import unittest
 
@@ -141,10 +143,6 @@ class TestValidateCandidates(unittest.TestCase):
             validate_candidates(bad, self.config)
 
 
-import subprocess
-import sys
-
-
 class TestCli(unittest.TestCase):
     def test_end_to_end_on_sample_fixture(self):
         with tempfile.TemporaryDirectory() as d:
@@ -157,7 +155,8 @@ class TestCli(unittest.TestCase):
             )
             self.assertEqual(proc.returncode, 0, proc.stderr)
             self.assertTrue(os.path.exists(out))
-            content = open(out).read()
+            with open(out) as fh:
+                content = fh.read()
             self.assertIn("# Ranked Shortlist", content)
             # Top-ranked surviving idea is the POD mugs (score 63).
             self.assertIn("| 1 | Spanish-language POD mugs/merch |", content)
@@ -176,6 +175,17 @@ class TestCli(unittest.TestCase):
                 capture_output=True, text=True,
             )
             self.assertEqual(proc.returncode, 2)
+
+    def test_missing_candidates_file_returns_1(self):
+        with tempfile.TemporaryDirectory() as d:
+            proc = subprocess.run(
+                [sys.executable, "-m", "engine.score",
+                 os.path.join(d, "does-not-exist.json"),
+                 "--out", os.path.join(d, "out.md")],
+                capture_output=True, text=True,
+            )
+            self.assertEqual(proc.returncode, 1)
+            self.assertEqual(proc.stdout, "")
 
 
 if __name__ == "__main__":

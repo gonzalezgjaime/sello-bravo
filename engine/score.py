@@ -148,9 +148,14 @@ def main(argv=None):
     parser.add_argument("--out", default="shortlist.md")
     args = parser.parse_args(argv)
 
-    config = load_config(args.config)
-    with open(args.candidates) as f:
-        data = json.load(f)
+    try:
+        config = load_config(args.config)
+        with open(args.candidates) as f:
+            data = json.load(f)
+    except (OSError, json.JSONDecodeError) as exc:
+        print(str(exc), file=sys.stderr)
+        return 1
+
     try:
         validate_candidates(data, config)
     except ValidationError as exc:
