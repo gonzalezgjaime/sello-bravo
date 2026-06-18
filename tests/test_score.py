@@ -25,5 +25,56 @@ class TestLoadConfig(unittest.TestCase):
             os.unlink(path)
 
 
+def make_candidate(**overrides):
+    base = {
+        "id": "es-pod-mugs",
+        "name": "Spanish-language POD mugs/merch",
+        "archetype": "pod_physical",
+        "capital_usd": 50,
+        "not_scam_legal_safe": True,
+        "scores": {
+            "runs_on_its_own": 4,
+            "leverages_advantage": 5,
+            "distribution": 5,
+            "demand_evidence": 4,
+            "time_to_first_dollar": 4,
+            "revenue_ceiling": 3,
+            "defensibility": 2,
+        },
+        "evidence": "Marketplaces give built-in buyers; proven prior MX mug sales.",
+        "why_fits_you": "Repeats your proven MX playbook with ES designs.",
+        "first_dollar_path": "List 20 ES mug designs on Mercado Libre + Etsy.",
+        "kill_criteria": "Drop if no sale within 4 weeks of 20 live designs.",
+    }
+    base.update(overrides)
+    return base
+
+
+class TestScoreCandidate(unittest.TestCase):
+    def setUp(self):
+        self.config = load_config(CONFIG_PATH)
+
+    def test_golden_score(self):
+        from engine.score import score_candidate
+        result = score_candidate(make_candidate(), self.config)
+        # 4*3 + 5*3 + 5*3 + 4*2 + 4*2 + 3*1 + 2*1 = 63
+        self.assertEqual(result["score"], 63)
+        self.assertFalse(result["rejected"])
+        self.assertEqual(result["reject_reasons"], [])
+
+    def test_capital_gate_rejects(self):
+        from engine.score import score_candidate
+        result = score_candidate(make_candidate(capital_usd=500), self.config)
+        self.assertTrue(result["rejected"])
+        self.assertTrue(any("capital" in r for r in result["reject_reasons"]))
+
+    def test_scam_gate_rejects(self):
+        from engine.score import score_candidate
+        result = score_candidate(
+            make_candidate(not_scam_legal_safe=False), self.config)
+        self.assertTrue(result["rejected"])
+        self.assertTrue(any("scam" in r for r in result["reject_reasons"]))
+
+
 if __name__ == "__main__":
     unittest.main()
