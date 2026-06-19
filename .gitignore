@@ -1,3 +1,7 @@
+# Python
+__pycache__/
+*.py[cod]
+
 # macOS
 .DS_Store
 .AppleDouble
@@ -16,3 +20,7 @@ Icon?
 .env
 .env.*
 !.env.example
+
+# Marketplace OAuth token files (contain client secrets / refresh tokens)
+.ml_token.json
+*.token.json

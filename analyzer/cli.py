@@ -13,6 +13,7 @@ import sys
 
 from analyzer.report import render_report
 from analyzer.sources.amazon_research import AmazonResearchSource
+from analyzer.sources.amazon_spapi import AmazonSpApiSource
 from analyzer.sources.mercadolibre import MercadoLibreSource
 from analyzer.sources.seasonality import SeasonalitySource
 from analyzer.synthesize import synthesize
@@ -41,11 +42,13 @@ def _validate_niches(niches):
 
 
 def build_sources(config, month, cache_dir=None):
+    # Real Amazon-MX data when SP-API credentials are configured; else EST.
+    amazon = AmazonSpApiSource.from_env() or AmazonResearchSource()
     return [
         MercadoLibreSource(site=config.get("site", "MLM"),
                            limit=config.get("ml_search_limit", 50),
                            cache_dir=cache_dir),
-        AmazonResearchSource(),
+        amazon,
         SeasonalitySource(month=month),
     ]
 

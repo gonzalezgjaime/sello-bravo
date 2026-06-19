@@ -1,13 +1,16 @@
-"""Tiny stdlib JSON GET with an on-disk cache and an injectable transport.
+"""Tiny stdlib JSON HTTP helpers with an on-disk cache and injectable transports.
 
-The transport seam lets tests run fully offline: pass ``transport=fake`` where
-``fake(url, headers) -> (status:int, body:bytes)``. The default transport uses
-``urllib`` and never raises on HTTP errors (it returns the error status + body).
+The transport seam lets tests run fully offline. ``fetch_json`` (GET) uses
+``transport(url, headers) -> (status:int, body:bytes)``; ``post_form`` (POST
+form-encoded) uses ``transport(url, data:bytes, headers) -> (status, body)``.
+Default transports use ``urllib`` and never raise on HTTP errors (they return the
+error status + body).
 """
 import hashlib
 import json
 import os
 import urllib.error
+import urllib.parse
 import urllib.request
 
 
@@ -36,13 +39,37 @@ def fetch_json(url, *, headers=None, transport=None, cache_dir=None):
             with open(cache_path) as f:
                 return 200, json.load(f)
     status, body = transport(url, headers)
-    data = None
-    if body:
-        try:
-            data = json.loads(body)
-        except (ValueError, TypeError):
-            data = None
+    data = _parse(body)
     if status == 200 and data is not None and cache_path:
         with open(cache_path, "w") as f:
             json.dump(data, f)
     return status, data
+
+
+def _default_post(url, data, headers):
+    req = urllib.request.Request(url, data=data, headers=headers or {}, method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            return resp.status, resp.read()
+    except urllib.error.HTTPError as exc:
+        return exc.code, exc.read()
+
+
+def post_form(url, fields, *, headers=None, transport=None):
+    """POST ``fields`` as ``application/x-www-form-urlencoded``; return ``(status, data)``."""
+    transport = transport or _default_post
+    body = urllib.parse.urlencode(fields).encode("utf-8")
+    hdrs = {"Content-Type": "application/x-www-form-urlencoded", "Accept": "application/json"}
+    if headers:
+        hdrs.update(headers)
+    status, raw = transport(url, body, hdrs)
+    return status, _parse(raw)
+
+
+def _parse(body):
+    if not body:
+        return None
+    try:
+        return json.loads(body)
+    except (ValueError, TypeError):
+        return None

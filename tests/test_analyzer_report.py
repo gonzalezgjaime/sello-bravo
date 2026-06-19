@@ -23,7 +23,7 @@ class TestRenderReport(unittest.TestCase):
         self.assertIn("| 1 | Niche A | 88.0 |", md)
         self.assertIn("## Top niches - detail", md)
         self.assertIn("provenance", md.lower())
-        self.assertIn("Amazon MX is EST-only", md)
+        self.assertIn("estimated catalog-match", md)                # Amazon SP-API caveat
         self.assertIn("competition** is the whole-marketplace", md)  # granularity caveat
         self.assertNotIn("WARNING - no REAL", md)                    # REAL data present
 

@@ -67,8 +67,9 @@ def render_report(scores, niches, config, month):
         "(`paging.total`), while **demand, price, and top-seller share** come only "
         "from the sampled top `limit` results. Top-seller share is sampled "
         "concentration, not true market share.",
-        "- Amazon MX is EST-only until an SP-API seller account is connected; it does "
-        "not yet contribute to scores.",
+        "- Amazon MX: with SP-API credentials, competition is Amazon's *estimated "
+        "catalog-match* count (not live offers/sellers), used only when Mercado Libre "
+        "has no listing for a niche; without credentials Amazon is EST and does not score.",
         "- Missing or uninformative (all-equal) signals normalize to a neutral 0.5; "
         "only genuinely-varying measured values span the full range. Scores are "
         "relative to the niches in this run; adding/removing niches re-scales them.",

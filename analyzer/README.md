@@ -20,6 +20,28 @@ ANALYZER_ML_FIXTURE_DIR=path/to/fixtures \
 `niches.json` entries: `{id, name, query, product_type, pod_base_cost_mxn, ship_mxn}`.
 Scoring weights live in `analyzer/config.json` (single source of truth).
 
+## Real data — credentials
+
+The public Mercado Libre API now requires an **OAuth app token** (anonymous search
+returns 403), and Amazon-MX needs **SP-API** credentials. Both are optional — the
+analyzer degrades honestly (EST + a warning) without them.
+
+**Mercado Libre** (create a dev app at developers.mercadolibre.com.mx):
+```bash
+python3 -m analyzer.ml_auth login --client-id ID --client-secret SECRET \
+    --redirect-uri https://your/redirect      # authorize once (paste the ?code=)
+export ML_TOKEN="$(python3 -m analyzer.ml_auth token)"   # refresh a 6h token; run the CLI
+```
+Tokens are stored in `.ml_token.json` (git-ignored, chmod 600).
+
+**Amazon MX SP-API** (set after authorizing a Selling Partner app; uses LWA only —
+no AWS SigV4 since 2023). Activates `AmazonSpApiSource` automatically:
+```bash
+export AMZ_LWA_CLIENT_ID=...  AMZ_LWA_CLIENT_SECRET=...  AMZ_SPAPI_REFRESH_TOKEN=...
+```
+> The SP-API adapter is unit-tested against canned responses but **pending live
+> validation** with a real seller account.
+
 ## Architecture
 
 `Source` adapters (`analyzer/sources/`) each measure one niche → `NicheMetrics`;

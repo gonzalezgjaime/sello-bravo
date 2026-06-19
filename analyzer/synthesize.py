@@ -3,7 +3,12 @@
 Rule: REAL signals are preferred over EST. For each niche we pick the first REAL
 ``total_sold`` (demand), REAL ``listing_count`` (competition), and REAL
 ``price_median_mxn`` (for margin); seasonality comes from whichever source
-provides it.
+provides it. When multiple REAL sources provide the same signal, the FIRST in
+source order wins (the CLI orders Mercado Libre before Amazon), so with an ML
+token present ML's live-listing competition is used and Amazon SP-API's
+*estimated catalog-match* count is not blended in — they measure different
+marketplaces. ``top_seller_share`` is carried for the report only; it does not
+enter the weighted score.
 
 Missing-data policy (uniform across demand/competition/margin): a value that was
 **not measured** for a niche, or a dimension that is **uninformative** (every
