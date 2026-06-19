@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <!-- Sello Bravo · MAESTRA / SIEMBRA FUTUROS · Nopal + Tinta · transparent bg -->
+
+  <!-- ===== EMBLEM: sprouting plant growing from an open book ===== -->
+  <g transform="translate(500,300)">
+
+    <!-- open book -->
+    <g fill="none" stroke="#1B1714" stroke-width="13" stroke-linejoin="round" stroke-linecap="round">
+      <!-- left page -->
+      <path d="M -8,86 C -52,58 -108,52 -150,60 L -150,150 C -108,142 -52,148 -8,176 Z" fill="#F3EADB"/>
+      <!-- right page -->
+      <path d="M 8,86 C 52,58 108,52 150,60 L 150,150 C 108,142 52,148 8,176 Z" fill="#F3EADB"/>
+      <!-- spine -->
+      <path d="M 0,84 L 0,178" stroke="#1B1714"/>
+      <!-- page lines, left -->
+      <path d="M -28,92 C -60,76 -98,72 -128,77" stroke-width="7" stroke="#2F5D50"/>
+      <path d="M -24,114 C -58,99 -96,95 -126,100" stroke-width="7" stroke="#2F5D50"/>
+      <!-- page lines, right -->
+      <path d="M 28,92 C 60,76 98,72 128,77" stroke-width="7" stroke="#2F5D50"/>
+      <path d="M 24,114 C 58,99 96,95 126,100" stroke-width="7" stroke="#2F5D50"/>
+    </g>
+
+    <!-- sprout stem -->
+    <path d="M 0,86 L 0,-30" fill="none" stroke="#2F5D50" stroke-width="14" stroke-linecap="round"/>
+
+    <!-- left leaf -->
+    <path d="M 0,18 C -34,8 -64,-18 -70,-58 C -30,-56 -2,-32 0,4 Z" fill="#2F5D50" stroke="#2F5D50" stroke-width="6" stroke-linejoin="round"/>
+    <!-- right leaf -->
+    <path d="M 0,2 C 34,-8 64,-34 70,-74 C 30,-72 2,-48 0,-12 Z" fill="#2F5D50" stroke="#2F5D50" stroke-width="6" stroke-linejoin="round"/>
+    <!-- top bud -->
+    <path d="M 0,-30 C -16,-48 -14,-78 0,-96 C 14,-78 16,-48 0,-30 Z" fill="#2F5D50" stroke="#2F5D50" stroke-width="6" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ===== TYPE LOCKUP ===== -->
+  <g text-anchor="middle">
+    <!-- hero word -->
+    <text x="500" y="640" font-family="'Anton',Impact,sans-serif" font-size="250" fill="#1B1714" letter-spacing="6">MAESTRA</text>
+
+    <!-- rule + sublabel framing -->
+    <g stroke="#2F5D50" stroke-width="6" stroke-linecap="round">
+      <line x1="206" y1="712" x2="364" y2="712"/>
+      <line x1="636" y1="712" x2="794" y2="712"/>
+    </g>
+    <circle cx="500" cy="712" r="9" fill="#C0492C"/>
+
+    <text x="500" y="780" font-family="'Oswald','Arial Narrow',sans-serif" font-weight="600" font-size="58" fill="#2F5D50" letter-spacing="22">SIEMBRA FUTUROS</text>
+  </g>
+</svg>

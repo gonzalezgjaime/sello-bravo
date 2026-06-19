@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sello Bravo — Brand Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500;600;700&family=Bitter:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cobre:#C0492C; --tinta:#1B1714; --hueso:#F3EADB; --nopal:#2F5D50;
+    --ambar:#E2A53C; --rosa:#D2326B; --paper:#F7F0E3;
+    --anton:'Anton',Impact,'Arial Narrow',sans-serif;
+    --osw:'Oswald','Arial Narrow',sans-serif;
+    --bit:'Bitter',Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--hueso);color:var(--tinta);font-family:var(--bit);
+    background-image:radial-gradient(circle at 50% -10%,#fbf6ea, var(--hueso) 60%);
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:var(--osw);text-transform:uppercase;letter-spacing:.32em;
+    font-weight:600;font-size:13px;color:var(--cobre)}
+  h2{font-family:var(--anton);font-weight:400;font-size:clamp(30px,5vw,52px);
+    letter-spacing:.01em;margin:.15em 0 .5em;line-height:.98}
+  section{padding:70px 0;border-top:2px solid rgba(27,23,20,.12)}
+  a{color:var(--cobre)}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:84px 0 64px;text-align:center}
+  .seal{width:172px;height:172px;color:var(--cobre)}
+  .wordmark{font-family:var(--anton);font-size:clamp(56px,13vw,148px);line-height:.9;
+    letter-spacing:.02em;margin:18px 0 6px;color:var(--tinta)}
+  .tag{font-family:var(--bit);font-style:italic;font-size:clamp(17px,2.6vw,24px);color:var(--cobre)}
+  .rule{width:64px;height:5px;background:var(--cobre);margin:26px auto 0;border-radius:3px}
+  .lede{max-width:680px;margin:26px auto 0;font-size:18px;line-height:1.6}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
+  .chip{font-family:var(--osw);font-size:13px;letter-spacing:.06em;border:1.5px solid var(--cobre);
+    color:var(--cobre);border-radius:999px;padding:7px 14px;background:rgba(192,73,44,.05)}
+
+  /* ---------- PALETTE ---------- */
+  .pal{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+  .sw{border-radius:14px;overflow:hidden;border:1px solid rgba(27,23,20,.12);background:#fff}
+  .sw .block{height:96px}
+  .sw .meta{padding:11px 13px}
+  .sw .nm{font-family:var(--osw);font-weight:600;letter-spacing:.04em;font-size:14px}
+  .sw .hex{font-family:var(--osw);font-size:12px;color:#7a7068;letter-spacing:.08em}
+  .sw .use{font-size:12.5px;color:#6b6259;margin-top:3px}
+
+  /* ---------- TYPE ---------- */
+  .type{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+  .spec{background:#fff;border:1px solid rgba(27,23,20,.12);border-radius:16px;padding:24px}
+  .spec .lbl{font-family:var(--osw);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cobre)}
+  .spec .big{font-family:var(--anton);font-size:60px;line-height:1;margin:10px 0 6px}
+  .spec .mid{font-family:var(--osw);font-weight:600;font-size:24px;letter-spacing:.18em;text-transform:uppercase}
+  .spec .bod{font-family:var(--bit);font-size:17px;line-height:1.55}
+  .spec small{display:block;margin-top:12px;color:#7a7068;font-family:var(--osw);letter-spacing:.05em;font-size:12px}
+
+  /* ---------- COLLECTION ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:22px}
+  .card{background:#fff;border:1px solid rgba(27,23,20,.13);border-radius:18px;overflow:hidden;
+    transition:transform .18s ease, box-shadow .18s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 34px -18px rgba(27,23,20,.45)}
+  .ptag{display:flex;align-items:center;gap:7px;font-family:var(--osw);font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:#8a8178;padding:12px 14px 0}
+  .ptag svg{width:15px;height:15px}
+  /* the "print canvas" — a natural-good product face */
+  .canvas{margin:10px 14px;height:230px;border-radius:12px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;text-align:center;gap:9px;padding:14px;
+    background:#FBF7EE;border:1px solid rgba(27,23,20,.08);position:relative}
+  .canvas.tee{background:#fff}
+  .art-emblem{height:40px;color:var(--cobre)}
+  .art-emblem svg{height:100%;width:auto;display:block}
+  .art{font-family:var(--anton);color:var(--tinta);line-height:.92;letter-spacing:.01em}
+  .art .l{display:block}
+  .art .x{font-size:clamp(20px,4.4vw,26px)}      /* big line */
+  .art.sm .x{font-size:clamp(17px,3.6vw,22px)}
+  .sub{font-family:var(--osw);font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+    font-size:10.5px;color:var(--tinta);max-width:90%}
+  .star{width:11px;height:11px;color:var(--cobre)}
+  .cap{padding:4px 16px 18px}
+  .cap .nm{font-family:var(--osw);font-weight:600;letter-spacing:.03em;font-size:14px}
+  .cap .ph{font-family:var(--bit);font-style:italic;color:#6b6259;font-size:13.5px;margin-top:2px}
+  .cap .se{display:inline-block;margin-top:8px;font-family:var(--osw);font-size:10.5px;
+    letter-spacing:.08em;text-transform:uppercase;color:var(--cobre);
+    border:1px solid rgba(192,73,44,.4);border-radius:999px;padding:3px 9px}
+
+  footer{padding:54px 0 70px;text-align:center;color:#6b6259;font-size:14px;line-height:1.6}
+  .note{max-width:760px;margin:0 auto;font-size:13px;color:#8a8178}
+</style>
+</head>
+<body>
+
+<!-- reusable marks -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <path id="arc-top" d="M 56 200 A 144 144 0 0 1 344 200"/>
+    <path id="arc-bot" d="M 56 200 A 144 144 0 0 0 344 200"/>
+    <!-- full seal (hero) -->
+    <symbol id="seal" viewBox="0 0 400 400">
+      <g fill="currentColor">
+        <circle cx="200" cy="200" r="192" fill="none" stroke="currentColor" stroke-width="3"/>
+        <circle cx="200" cy="200" r="181" fill="none" stroke="currentColor" stroke-width="12"/>
+        <circle cx="200" cy="200" r="166" fill="none" stroke="currentColor" stroke-width="2"/>
+        <text font-family="'Oswald','Arial Narrow',sans-serif" font-weight="600" font-size="37" letter-spacing="7">
+          <textPath href="#arc-top" startOffset="50%" text-anchor="middle">SELLO BRAVO</textPath></text>
+        <text font-family="'Oswald','Arial Narrow',sans-serif" font-weight="600" font-size="23" letter-spacing="6">
+          <textPath href="#arc-bot" startOffset="50%" text-anchor="middle">ORGULLO MEXICANO</textPath></text>
+        <path d="M54 193 L61 200 L54 207 L47 200 Z"/><path d="M346 193 L353 200 L346 207 L339 200 Z"/>
+        <path d="M200 148 L212.3 183 L249.5 183.9 L220 206.5 L230.6 242.1 L200 221 L169.4 242.1 L180 206.5 L150.5 183.9 L187.7 183 Z"/>
+      </g>
+    </symbol>
+    <!-- mini seal (cards) -->
+    <symbol id="mini" viewBox="0 0 100 100">
+      <g fill="currentColor">
+        <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="3"/>
+        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="6"/>
+        <path d="M50 26 L56.2 45.1 L76.3 45.1 L60.0 56.9 L66.3 76.0 L50 64.2 L33.7 76.0 L40.0 56.9 L23.7 45.1 L43.8 45.1 Z"/>
+      </g>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.9 6.9 7.1.6-5.4 4.7 1.6 7L12 17.8 5.8 21.2l1.6-7L2 9.5l7.1-.6z"/></symbol>
+  </defs>
+</svg>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="seal"><use href="#seal"/></svg>
+    <div class="wordmark">SELLO&nbsp;BRAVO</div>
+    <div class="tag">Orgullo con sello propio.</div>
+    <div class="rule"></div>
+    <p class="lede">Marca mexicana de <b>merch</b> que convierte el orgullo — lo regional, los oficios, la familia, las fiestas y el buen humor — en tazas, playeras y prints bien hechos. Cada pieza lleva <i>el sello</i>.</p>
+    <div class="chips">
+      <span class="chip">Orgulloso</span><span class="chip">Bravo</span>
+      <span class="chip">Cálido</span><span class="chip">Elevado-folk</span>
+      <span class="chip">Print-on-demand</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">La idea</div>
+    <h2>El sello = la marca.</h2>
+    <p class="lede" style="margin-left:0;text-align:left">
+      <b>Sello</b> es un cuño, una marca de autenticidad — y literalmente lo que estampamos en cada producto.
+      <b>Bravo</b> es atrevido y con espíritu, y también <b>¡bravo!</b> — aplauso, orgullo. El nombre <i>es</i> el oficio:
+      <b>la marca atrevida</b>. Es sugerente (registrable, propio), no descriptivo. Voz en español, corta, con causa y con sazón.
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Paleta</div>
+    <h2>Cobre, tinta y hueso.</h2>
+    <div class="pal">
+      <div class="sw"><div class="block" style="background:#C0492C"></div><div class="meta"><div class="nm">Cobre</div><div class="hex">#C0492C</div><div class="use">Hero · logo · titulares</div></div></div>
+      <div class="sw"><div class="block" style="background:#1B1714"></div><div class="meta"><div class="nm">Tinta</div><div class="hex">#1B1714</div><div class="use">Tipografía · line art</div></div></div>
+      <div class="sw"><div class="block" style="background:#F3EADB;border-bottom:1px solid #e7dcc8"></div><div class="meta"><div class="nm">Hueso</div><div class="hex">#F3EADB</div><div class="use">Fondo · lienzo natural</div></div></div>
+      <div class="sw"><div class="block" style="background:#2F5D50"></div><div class="meta"><div class="nm">Nopal</div><div class="hex">#2F5D50</div><div class="use">Acento · equilibrio</div></div></div>
+      <div class="sw"><div class="block" style="background:#E2A53C"></div><div class="meta"><div class="nm">Ámbar</div><div class="hex">#E2A53C</div><div class="use">Calor · fiesta</div></div></div>
+      <div class="sw"><div class="block" style="background:#D2326B"></div><div class="meta"><div class="nm">Rosa Mexicano</div><div class="hex">#D2326B</div><div class="use">Pop (≤10%)</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Tipografía</div>
+    <h2>Anton · Oswald · Bitter.</h2>
+    <div class="type">
+      <div class="spec"><div class="lbl">Display · Anton</div><div class="big">¡Bravo!</div><small>Titulares · wordmark. Condensada, fuerte.</small></div>
+      <div class="spec"><div class="lbl">Etiqueta · Oswald</div><div class="mid">Orgullo Mexicano</div><small>Sellos, sub-etiquetas, versalitas.</small></div>
+      <div class="spec"><div class="lbl">Texto · Bitter</div><div class="bod">Lo nuestro, bien hecho — con orgullo y con sello. Una marca cálida, bilingüe y con causa.</div><small>Cuerpo · bilingüe.</small></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">La colección · v1</div>
+    <h2>Ocho diseños de salida.</h2>
+    <div class="grid">
+
+      <!-- 1 Orgullo Mexicano -->
+      <div class="card">
+        <div class="ptag"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 3 4 6v4l2 .5V21h12V10.5L20 10V6l-4-3-2 2H10z"/></svg>Playera</div>
+        <div class="canvas tee">
+          <svg class="art-emblem" style="height:46px"><use href="#mini"/></svg>
+          <div class="art"><span class="l x">ORGULLO</span><svg class="star" style="margin:1px 0"><use href="#i-star"/></svg><span class="l x">MEXICANO</span></div>
+        </div>
+        <div class="cap"><div class="nm">Orgullo Mexicano</div><div class="ph">El ancla de la marca.</div><span class="se">🟢 Evergreen</span></div>
+      </div>
+
+      <!-- 2 Tapatío -->
+      <div class="card">
+        <div class="ptag"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M5 7h11v10a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3zM16 9h2a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-2z"/></svg>Taza</div>
+        <div class="canvas">
+          <span class="art-emblem" style="color:var(--ambar)"><svg viewBox="0 0 64 40"><path fill="currentColor" d="M10 38V22c0-12 9-8 22-8s22-4 22 8v16h-6V24c0-7-7-4-16-4s-16-3-16 4v14z"/></svg></span>
+          <div class="art" style="color:var(--cobre)"><span class="l x">TAPATÍO</span><span class="l x" style="color:var(--tinta)">DE CORAZÓN</span></div>
+          <div class="sub">Guadalajara · Jalisco</div>
+        </div>
+        <div class="cap"><div class="nm">Tapatío de Corazón</div><div class="ph">Guadalajara · Jalisco</div><span class="se">📅 Fiestas sept.</span></div>
+      </div>
+
+      <!-- 3 Ingeniero -->
+      <div class="card">
+        <div class="ptag"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M5 7h11v10a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3zM16 9h2a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-2z"/></svg>Taza</div>
+        <div class="canvas">
+          <span class="art-emblem"><svg viewBox="0 0 48 48"><path fill="currentColor" d="M24 14a10 10 0 1 0 0 20 10 10 0 0 0 0-20m0 6a4 4 0 1 1 0 8 4 4 0 0 1 0-8M22 4h4l1 5-4 1-1-6M22 38l4 1-1 5h-4l1-6M5 22l5-1 1 4-5 1-1-4M38 22l5 1-1 4-5-1 1-4"/></svg></span>
+          <div class="art sm"><span class="l x">CONFÍA —</span><span class="l x">SOY INGENIERO</span></div>
+        </div>
+        <div class="cap"><div class="nm">Confía, soy ingeniero</div><div class="ph">Humor de profesión · plantilla</div><span class="se">🟢 Evergreen</span></div>
+      </div>
+
+      <!-- 4 Mamá -->
+      <div class="card">
+        <div class="ptag"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M5 7h11v10a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3zM16 9h2a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-2z"/></svg>Taza</div>
+        <div class="canvas">
+          <span class="art-emblem" style="color:var(--rosa)"><svg viewBox="0 0 56 32"><path fill="currentColor" d="M6 28 4 12l9 7 5-11 5 11 5-11 5 11 9-7-2 16z"/></svg></span>
+          <div class="art" style="font-size:clamp(30px,7vw,40px)">MAMÁ</div>
+          <div class="sub">Jefa · Reina · Y todo</div>
+        </div>
+        <div class="cap"><div class="nm">Mamá: jefa, reina y todo</div><div class="ph">Día de las Madres</div><span class="se">📅 10 may</span></div>
+      </div>
+
+      <!-- 5 Muertos -->
+      <div class="card">
+        <div class="ptag"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 3 4 6v4l2 .5V21h12V10.5L20 10V6l-4-3-2 2H10z"/></svg>Playera</div>
+        <div class="canvas tee">
+          <span class="art-emblem" style="height:48px;color:var(--ambar)"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="2.5"/><g fill="var(--cobre)"><circle cx="24" cy="6" r="3"/><circle cx="42" cy="24" r="3"/><circle cx="24" cy="42" r="3"/><circle cx="6" cy="24" r="3"/><circle cx="36.7" cy="11.3" r="2.6"/><circle cx="36.7" cy="36.7" r="2.6"/><circle cx="11.3" cy="36.7" r="2.6"/><circle cx="11.3" cy="11.3" r="2.6"/></g><g fill="var(--tinta)"><circle cx="20" cy="22" r="2.3"/><circle cx="28" cy="22" r="2.3"/><path d="M22 28h4v2h-4z"/></g></svg></span>
+          <div class="art sm"><span class="l x">LOS NUESTROS</span><span class="l x">NUNCA SE VAN</span></div>
+        </div>
+        <div class="cap"><div class="nm">Los nuestros nunca se van</div><div class="ph">Día de Muertos · con respeto</div><span class="se">📅 oct–nov</span></div>
+      </div>
+
+      <!-- 6 Enfermera -->
+      <div class="card">
+        <div class="ptag"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M5 7h11v10a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3zM16 9h2a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-2z"/></svg>Taza</div>
+        <div class="canvas">
+          <span class="art-emblem"><svg viewBox="0 0 48 44"><path fill="currentColor" d="M24 42 6 24a10 10 0 0 1 14-14l4 4 4-4a10 10 0 0 1 14 14z"/><path fill="#FBF7EE" d="M22 16h4v4h4v4h-4v4h-4v-4h-4v-4h4z"/></svg></span>
+          <div class="art" style="font-size:clamp(24px,5.4vw,30px)">ENFERMERA</div>
+          <div class="sub">Corazón de acero · manos de ángel</div>
+        </div>
+        <div class="cap"><div class="nm">Enfermera: corazón de acero</div><div class="ph">Regalo · plantilla de oficio</div><span class="se">📅 6 ene</span></div>
+      </div>
+
+      <!-- 7 XV -->
+      <div class="card">
+        <div class="ptag"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 3 4 6v4l2 .5V21h12V10.5L20 10V6l-4-3-2 2H10z"/></svg>Playera</div>
+        <div class="canvas tee">
+          <div class="sub" style="color:var(--rosa)">[ NOMBRE ]</div>
+          <div class="art" style="font-size:clamp(34px,8vw,46px);color:var(--cobre)">MIS XV</div>
+          <div class="sub" style="color:var(--ambar)">[ FECHA ]</div>
+        </div>
+        <div class="cap"><div class="nm">Mis XV, con sello</div><div class="ph">Personalizable · premium + paquetes</div><span class="se">📅 mar–jul</span></div>
+      </div>
+
+      <!-- 8 Maestra -->
+      <div class="card">
+        <div class="ptag"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M5 7h11v10a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3zM16 9h2a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2h-2z"/></svg>Taza</div>
+        <div class="canvas">
+          <span class="art-emblem" style="color:var(--nopal)"><svg viewBox="0 0 48 40"><path fill="currentColor" d="M6 30c0-3 7-3 18-3s18 0 18 3v6H6z"/><path fill="none" stroke="currentColor" stroke-width="2.5" d="M24 27V14"/><path fill="currentColor" d="M24 16c-7 0-9-8-9-8s8-1 9 8m0-2c5 0 7-7 7-7s-7 0-7 7"/></svg></span>
+          <div class="art" style="font-size:clamp(26px,6vw,34px)">MAESTRA</div>
+          <div class="sub">Siembra futuros</div>
+        </div>
+        <div class="cap"><div class="nm">Maestra: siembra futuros</div><div class="ph">Día del Maestro · plantilla</div><span class="se">📅 15 may</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <svg class="seal" style="width:64px;height:64px"><use href="#seal"/></svg>
+    <p><b>Sello Bravo</b> · sellobravo.com · Amazon México + Mercado Libre · print-on-demand</p>
+    <p class="note">Los diseños se muestran como concepto tipográfico. El arte final se ajusta a las specs de impresión
+      (PNG transparente 300 DPI) y se valida con la matriz de oportunidad del analizador antes de producir.
+      Tipos: Anton · Oswald · Bitter (Google Fonts, uso comercial). Logo y arte © Sello Bravo.</p>
+  </div>
+</footer>
+
+</body>
+</html>

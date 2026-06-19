@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <!-- transparent background, no full-bleed rect -->
+
+  <!-- ============ EMBLEM: gear meshed with set-square (escuadra) + ruler ============ -->
+  <g transform="translate(500 290)" fill="none" stroke="#C0492C" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- GEAR (Cobre) -->
+    <path d="M-22 -116 L22 -116 L29 -89
+             A90 90 0 0 1 63 -69 L89 -80 L111 -43 L88 -25
+             A90 90 0 0 1 88 25 L111 43 L89 80 L63 69
+             A90 90 0 0 1 29 89 L22 116 L-22 116 L-29 89
+             A90 90 0 0 1 -63 69 L-89 80 L-111 43 L-88 25
+             A90 90 0 0 1 -88 -25 L-111 -43 L-89 -80 L-63 -69
+             A90 90 0 0 1 -29 -89 Z"/>
+    <!-- gear hub -->
+    <circle cx="0" cy="0" r="32"/>
+
+    <!-- SET-SQUARE (escuadra): bold right-triangle meshing lower-right of gear -->
+    <path d="M-66 146 L156 146 L-66 -76 Z"/>
+    <path d="M-40 128 L116 128 L-40 -28 Z"/>
+
+    <!-- RULER: slim bar crossing top-left with tick marks -->
+    <g transform="rotate(-32)">
+      <path d="M-178 -148 L42 -148 L42 -116 L-178 -116 Z"/>
+      <path d="M-148 -148 L-148 -130 M-116 -148 L-116 -134 M-84 -148 L-84 -130 M-52 -148 L-52 -134 M-20 -148 L-20 -130 M12 -148 L12 -134"/>
+    </g>
+  </g>
+
+  <!-- accent rule under emblem, above type -->
+  <line x1="250" y1="500" x2="750" y2="500" stroke="#C0492C" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- ============ TYPOGRAPHIC LOCKUP (Tinta, Anton) ============ -->
+  <g fill="#1B1714" text-anchor="middle" font-family="'Anton',Impact,sans-serif">
+    <text x="500" y="660" font-size="170" letter-spacing="3">CONFÍA —</text>
+    <text x="500" y="830" font-size="170" letter-spacing="3">SOY</text>
+    <text x="500" y="975" font-size="150" letter-spacing="6">INGENIERO</text>
+  </g>
+</svg>

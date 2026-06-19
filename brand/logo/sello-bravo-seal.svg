@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="Sello Bravo">
+  <title>Sello Bravo — el sello</title>
+  <defs>
+    <path id="sb-top" d="M 56 200 A 144 144 0 0 1 344 200"/>
+    <path id="sb-bot" d="M 56 200 A 144 144 0 0 0 344 200"/>
+  </defs>
+  <g fill="#C0492C" stroke="none">
+    <!-- stamp rings -->
+    <circle cx="200" cy="200" r="192" fill="none" stroke="#C0492C" stroke-width="3"/>
+    <circle cx="200" cy="200" r="181" fill="none" stroke="#C0492C" stroke-width="12"/>
+    <circle cx="200" cy="200" r="166" fill="none" stroke="#C0492C" stroke-width="2"/>
+    <!-- curved type -->
+    <text font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="600"
+          font-size="37" letter-spacing="7">
+      <textPath xlink:href="#sb-top" startOffset="50%" text-anchor="middle">SELLO BRAVO</textPath>
+    </text>
+    <text font-family="Oswald, 'Arial Narrow', sans-serif" font-weight="600"
+          font-size="23" letter-spacing="6">
+      <textPath xlink:href="#sb-bot" startOffset="50%" text-anchor="middle">ORGULLO MEXICANO</textPath>
+    </text>
+    <!-- side separators -->
+    <path d="M54 193 L61 200 L54 207 L47 200 Z"/>
+    <path d="M346 193 L353 200 L346 207 L339 200 Z"/>
+    <!-- central star -->
+    <path d="M200 148 L212.3 183 L249.5 183.9 L220 206.5 L230.6 242.1 L200 221
+             L169.4 242.1 L180 206.5 L150.5 183.9 L187.7 183 Z"/>
+  </g>
+</svg>

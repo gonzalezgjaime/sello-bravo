@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <!-- transparent background; no full-bleed rect -->
+
+  <!-- EMBLEM: heart with medical cross, Cobre fill, Tinta cross knockout -->
+  <g>
+    <!-- heart -->
+    <path d="M500 268
+             C500 220 462 188 414 188
+             C356 188 318 234 318 290
+             C318 372 404 432 500 502
+             C596 432 682 372 682 290
+             C682 234 644 188 586 188
+             C538 188 500 220 500 268 Z"
+          fill="#C0492C"/>
+    <!-- medical cross knockout (Hueso to read on any mug, sits clean inside heart) -->
+    <path d="M474 252 h52 v40 h40 v52 h-40 v40 h-52 v-40 h-40 v-52 h40 z"
+          fill="#F3EADB"/>
+  </g>
+
+  <!-- HERO WORDMARK -->
+  <text x="500" y="700"
+        text-anchor="middle"
+        font-family="'Anton',Impact,sans-serif"
+        font-size="290"
+        letter-spacing="2"
+        fill="#1B1714">ENFERMERA</text>
+
+  <!-- SUBLABEL -->
+  <text x="500" y="775"
+        text-anchor="middle"
+        font-family="'Oswald','Arial Narrow',sans-serif"
+        font-weight="600"
+        font-size="44"
+        letter-spacing="9"
+        fill="#1B1714">CORAZON DE ACERO · MANOS DE ANGEL</text>
+
+  <!-- thin rules flanking sublabel for an elevated stamp feel -->
+  <rect x="170" y="757" width="120" height="4" fill="#C0492C"/>
+  <rect x="710" y="757" width="120" height="4" fill="#C0492C"/>
+</svg>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1500" viewBox="0 0 1200 1500">
+  <!-- Sello Bravo — Orgullo Mexicano — transparent background, print-ready -->
+
+  <!-- ===== SELLO (seal) emblem: double ring + 5-point star, Cobre ===== -->
+  <g transform="translate(600,440)">
+    <!-- outer ring -->
+    <circle cx="0" cy="0" r="200" fill="none" stroke="#C0492C" stroke-width="22"/>
+    <!-- inner ring -->
+    <circle cx="0" cy="0" r="150" fill="none" stroke="#C0492C" stroke-width="11"/>
+    <!-- 5-point star center (solid Cobre), point-up, radius 92 / inner 38 -->
+    <path d="M 0,-92
+             L 21.6,-29.8
+             L 87.5,-28.4
+             L 35.0,11.4
+             L 54.1,73.4
+             L 0,36.0
+             L -54.1,73.4
+             L -35.0,11.4
+             L -87.5,-28.4
+             L -21.6,-29.8 Z"
+          fill="#C0492C"/>
+  </g>
+
+  <!-- ===== Typographic lockup: ORGULLO / MEXICANO, Tinta, Anton ===== -->
+  <g fill="#1B1714" text-anchor="middle" font-family="'Anton',Impact,sans-serif">
+    <text x="600" y="905" font-size="290" letter-spacing="6">ORGULLO</text>
+    <text x="600" y="1175" font-size="290" letter-spacing="6">MEXICANO</text>
+  </g>
+
+  <!-- small star dot between the two words (Cobre) -->
+  <g transform="translate(600,978)">
+    <path d="M 0,-22
+             L 5.2,-7.1
+             L 20.9,-6.8
+             L 8.4,2.7
+             L 12.9,17.8
+             L 0,8.6
+             L -12.9,17.8
+             L -8.4,2.7
+             L -20.9,-6.8
+             L -5.2,-7.1 Z"
+          fill="#C0492C"/>
+  </g>
+</svg>

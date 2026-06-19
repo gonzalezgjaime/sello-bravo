@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="1200" height="1500">
+  <title>Los Nuestros Nunca Se Van — Sello Bravo</title>
+
+  <!-- ============ EMBLEM: cempasuchil marigolds framing a calaca ============ -->
+  <g transform="translate(600 470)">
+
+    <!-- ---- MARIGOLD WREATH (Ambar + Cobre) ---- -->
+    <!-- A marigold = layered scalloped rings. Defined once, instanced around the skull. -->
+    <defs>
+      <g id="sb-mari-amb">
+        <!-- outer petals -->
+        <path d="M0,-46
+                 A46,46 0 0 1 14,-43 L8,-26
+                 A28,28 0 0 0 0,-28 Z" fill="#E2A53C"/>
+        <g>
+          <use href="#sb-mari-amb-pet"/>
+        </g>
+      </g>
+      <!-- single petal wedge, instanced by rotation -->
+      <path id="sb-mari-amb-pet" d="M0,-46 A11,11 0 0 1 11,-44 L6,-25 A14,14 0 0 0 -6,-25 L-11,-44 A11,11 0 0 1 0,-46 Z" fill="#E2A53C"/>
+      <path id="sb-mari-cob-pet" d="M0,-31 A9,9 0 0 1 9,-29 L5,-15 A11,11 0 0 0 -5,-15 L-9,-29 A9,9 0 0 1 0,-31 Z" fill="#C0492C"/>
+    </defs>
+
+    <!-- one full marigold bloom: outer Ambar ring + inner Cobre ring + center -->
+    <g id="sb-bloom">
+      <g>
+        <use href="#sb-mari-amb-pet"/>
+        <use href="#sb-mari-amb-pet" transform="rotate(30)"/>
+        <use href="#sb-mari-amb-pet" transform="rotate(60)"/>
+        <use href="#sb-mari-amb-pet" transform="rotate(90)"/>
+        <use href="#sb-mari-amb-pet" transform="rotate(120)"/>
+        <use href="#sb-mari-amb-pet" transform="rotate(150)"/>
+        <use href="#sb-mari-amb-pet" transform="rotate(180)"/>
+        <use href="#sb-mari-amb-pet" transform="rotate(210)"/>
+        <use href="#sb-mari-amb-pet" transform="rotate(240)"/>
+        <use href="#sb-mari-amb-pet" transform="rotate(270)"/>
+        <use href="#sb-mari-amb-pet" transform="rotate(300)"/>
+        <use href="#sb-mari-amb-pet" transform="rotate(330)"/>
+      </g>
+      <g transform="rotate(15)">
+        <use href="#sb-mari-cob-pet"/>
+        <use href="#sb-mari-cob-pet" transform="rotate(36)"/>
+        <use href="#sb-mari-cob-pet" transform="rotate(72)"/>
+        <use href="#sb-mari-cob-pet" transform="rotate(108)"/>
+        <use href="#sb-mari-cob-pet" transform="rotate(144)"/>
+        <use href="#sb-mari-cob-pet" transform="rotate(180)"/>
+        <use href="#sb-mari-cob-pet" transform="rotate(216)"/>
+        <use href="#sb-mari-cob-pet" transform="rotate(252)"/>
+        <use href="#sb-mari-cob-pet" transform="rotate(288)"/>
+        <use href="#sb-mari-cob-pet" transform="rotate(324)"/>
+      </g>
+      <circle r="9" fill="#C0492C"/>
+      <circle r="4" fill="#E2A53C"/>
+    </g>
+
+    <!-- blooms arranged in an arc above + around the skull -->
+    <use href="#sb-bloom" transform="translate(-225 30) scale(0.92)"/>
+    <use href="#sb-bloom" transform="translate(-190 -120) scale(1.0)"/>
+    <use href="#sb-bloom" transform="translate(-95 -210) scale(0.85)"/>
+    <use href="#sb-bloom" transform="translate(95 -210) scale(0.85)"/>
+    <use href="#sb-bloom" transform="translate(190 -120) scale(1.0)"/>
+    <use href="#sb-bloom" transform="translate(225 30) scale(0.92)"/>
+    <use href="#sb-bloom" transform="translate(0 -240) scale(0.7)"/>
+
+    <!-- small leaf accents (Nopal? no — keep to brief: Ambar/Cobre marigolds + Tinta line) -->
+    <!-- tiny bud accents in Cobre to fill gaps -->
+    <circle cx="-250" cy="-55" r="7" fill="#C0492C"/>
+    <circle cx="250" cy="-55" r="7" fill="#C0492C"/>
+    <circle cx="-150" cy="60" r="6" fill="#E2A53C"/>
+    <circle cx="150" cy="60" r="6" fill="#E2A53C"/>
+
+    <!-- ---- SUGAR SKULL (Tinta line art, reverent) ---- -->
+    <g fill="none" stroke="#1B1714" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <!-- cranium + jaw outline -->
+      <path d="M0,-150
+               C 78,-150 118,-96 118,-40
+               C 118,2 100,30 84,46
+               C 80,62 80,74 70,84
+               C 58,96 40,102 26,104
+               C 22,116 12,124 0,124
+               C -12,124 -22,116 -26,104
+               C -40,102 -58,96 -70,84
+               C -80,74 -80,62 -84,46
+               C -100,30 -118,2 -118,-40
+               C -118,-96 -78,-150 0,-150 Z"
+            fill="#F3EADB"/>
+
+      <!-- chin scallops (teeth row) -->
+      <path d="M-46,90 L-46,108 M-30,96 L-30,116 M-15,100 L-15,120 M0,101 L0,121 M15,100 L15,120 M30,96 L30,116 M46,90 L46,108"/>
+      <path d="M-50,90 Q0,108 50,90"/>
+
+      <!-- eye sockets (rounded, decorated) -->
+      <g>
+        <path d="M-70,-58 C-70,-86 -42,-92 -34,-70 C-30,-58 -34,-44 -50,-40 C-64,-37 -70,-46 -70,-58 Z" fill="#1B1714"/>
+        <path d="M70,-58 C70,-86 42,-92 34,-70 C30,-58 34,-44 50,-40 C64,-37 70,-46 70,-58 Z" fill="#1B1714"/>
+      </g>
+      <!-- decorative rays around eyes -->
+      <g stroke-width="5">
+        <path d="M-52,-96 L-52,-108 M-28,-92 L-22,-104 M-78,-78 L-90,-86 M-80,-50 L-94,-50"/>
+        <path d="M52,-96 L52,-108 M28,-92 L22,-104 M78,-78 L90,-86 M80,-50 L94,-50"/>
+      </g>
+
+      <!-- nose (inverted heart) -->
+      <path d="M0,-24 C-12,-44 -30,-30 -16,-12 L0,2 L16,-12 C30,-30 12,-44 0,-24 Z" fill="#1B1714"/>
+
+      <!-- forehead marigold motif (single small bloom drawn as line) -->
+      <g stroke-width="5">
+        <circle cx="0" cy="-108" r="11"/>
+        <path d="M0,-130 L0,-119 M0,-97 L0,-86 M-22,-108 L-11,-108 M11,-108 L22,-108
+                 M-16,-124 L-9,-116 M16,-124 L9,-116 M-16,-92 L-9,-100 M16,-92 L9,-100"/>
+      </g>
+
+      <!-- cheek swirls (sugar-skull decoration) -->
+      <g stroke-width="5">
+        <path d="M-60,4 C-72,18 -64,36 -48,34 C-58,28 -56,16 -46,14"/>
+        <path d="M60,4 C72,18 64,36 48,34 C58,28 56,16 46,14"/>
+        <circle cx="-58" cy="40" r="4" fill="#1B1714"/>
+        <circle cx="58" cy="40" r="4" fill="#1B1714"/>
+      </g>
+
+      <!-- vertical center accents under nose -->
+      <path d="M0,8 L0,30" stroke-width="5"/>
+      <circle cx="0" cy="40" r="4" fill="#1B1714"/>
+    </g>
+  </g>
+
+  <!-- ============ TYPOGRAPHIC LOCKUP (hero) ============ -->
+  <g fill="#1B1714" text-anchor="middle" font-family="'Anton',Impact,sans-serif">
+    <!-- thin rule flourishes flanking small kicker -->
+    <g stroke="#C0492C" stroke-width="4" stroke-linecap="round">
+      <line x1="360" y1="828" x2="500" y2="828"/>
+      <line x1="700" y1="828" x2="840" y2="828"/>
+      <circle cx="600" cy="828" r="6" fill="#C0492C" stroke="none"/>
+    </g>
+
+    <text x="600" y="1030" font-size="232" letter-spacing="4">LOS NUESTROS</text>
+    <text x="600" y="1248" font-size="232" letter-spacing="4">NUNCA SE VAN</text>
+  </g>
+
+  <!-- small caps tag below, Oswald, generous tracking -->
+  <text x="600" y="1340" text-anchor="middle"
+        font-family="'Oswald','Arial Narrow',sans-serif" font-weight="600"
+        font-size="40" letter-spacing="16" fill="#2F5D50">SELLO BRAVO</text>
+
+  <!-- bottom flourish rule -->
+  <g stroke="#2F5D50" stroke-width="4" stroke-linecap="round">
+    <line x1="430" y1="1378" x2="560" y2="1378"/>
+    <line x1="640" y1="1378" x2="770" y2="1378"/>
+    <circle cx="600" cy="1378" r="6" fill="#2F5D50" stroke="none"/>
+  </g>
+</svg>

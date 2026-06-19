@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <!-- transparent background; no full-bleed rect -->
+
+  <!-- ===== EMBLEM: marigold flower above crown ===== -->
+  <g transform="translate(500 248)">
+    <!-- Marigold (Rosa Mexicano only) -->
+    <g fill="#D2326B">
+      <!-- outer petal ring -->
+      <g>
+        <path d="M0 -86 C 16 -64 16 -40 0 -30 C -16 -40 -16 -64 0 -86 Z"/>
+        <path d="M0 -86 C 16 -64 16 -40 0 -30 C -16 -40 -16 -64 0 -86 Z" transform="rotate(45)"/>
+        <path d="M0 -86 C 16 -64 16 -40 0 -30 C -16 -40 -16 -64 0 -86 Z" transform="rotate(90)"/>
+        <path d="M0 -86 C 16 -64 16 -40 0 -30 C -16 -40 -16 -64 0 -86 Z" transform="rotate(135)"/>
+        <path d="M0 -86 C 16 -64 16 -40 0 -30 C -16 -40 -16 -64 0 -86 Z" transform="rotate(180)"/>
+        <path d="M0 -86 C 16 -64 16 -40 0 -30 C -16 -40 -16 -64 0 -86 Z" transform="rotate(225)"/>
+        <path d="M0 -86 C 16 -64 16 -40 0 -30 C -16 -40 -16 -64 0 -86 Z" transform="rotate(270)"/>
+        <path d="M0 -86 C 16 -64 16 -40 0 -30 C -16 -40 -16 -64 0 -86 Z" transform="rotate(315)"/>
+      </g>
+      <!-- inner petal ring (offset) -->
+      <g transform="rotate(22.5)">
+        <path d="M0 -64 C 12 -48 12 -30 0 -22 C -12 -30 -12 -48 0 -64 Z"/>
+        <path d="M0 -64 C 12 -48 12 -30 0 -22 C -12 -30 -12 -48 0 -64 Z" transform="rotate(45)"/>
+        <path d="M0 -64 C 12 -48 12 -30 0 -22 C -12 -30 -12 -48 0 -64 Z" transform="rotate(90)"/>
+        <path d="M0 -64 C 12 -48 12 -30 0 -22 C -12 -30 -12 -48 0 -64 Z" transform="rotate(135)"/>
+        <path d="M0 -64 C 12 -48 12 -30 0 -22 C -12 -30 -12 -48 0 -64 Z" transform="rotate(180)"/>
+        <path d="M0 -64 C 12 -48 12 -30 0 -22 C -12 -30 -12 -48 0 -64 Z" transform="rotate(225)"/>
+        <path d="M0 -64 C 12 -48 12 -30 0 -22 C -12 -30 -12 -48 0 -64 Z" transform="rotate(270)"/>
+        <path d="M0 -64 C 12 -48 12 -30 0 -22 C -12 -30 -12 -48 0 -64 Z" transform="rotate(315)"/>
+      </g>
+    </g>
+    <!-- flower center -->
+    <circle cx="0" cy="0" r="20" fill="#C0492C"/>
+    <circle cx="0" cy="0" r="9" fill="#F3EADB"/>
+  </g>
+
+  <!-- Crown (corona) in Cobre, below flower -->
+  <g transform="translate(500 372)" fill="#C0492C">
+    <!-- crown body: three points with rounded jewels at tips -->
+    <path d="M-110 44
+             L-110 -6
+             L-66 30
+             L-34 -42
+             L0 22
+             L34 -42
+             L66 30
+             L110 -6
+             L110 44 Z"/>
+    <!-- base band -->
+    <rect x="-118" y="48" width="236" height="22" rx="6"/>
+    <!-- jewel tips -->
+    <circle cx="-110" cy="-6" r="11" fill="#E2A53C"/>
+    <circle cx="-34" cy="-42" r="12" fill="#E2A53C"/>
+    <circle cx="34" cy="-42" r="12" fill="#E2A53C"/>
+    <circle cx="110" cy="-6" r="11" fill="#E2A53C"/>
+    <!-- band jewel -->
+    <circle cx="0" cy="59" r="7" fill="#E2A53C"/>
+  </g>
+
+  <!-- ===== TYPE LOCKUP ===== -->
+  <!-- MAMA huge (Anton) in Tinta -->
+  <text x="500" y="690"
+        font-family="'Anton',Impact,sans-serif"
+        font-size="360"
+        letter-spacing="6"
+        text-anchor="middle"
+        fill="#1B1714">MAMA</text>
+
+  <!-- decorative rule line + sublabel -->
+  <g>
+    <line x1="150" y1="772" x2="350" y2="772" stroke="#C0492C" stroke-width="6" stroke-linecap="round"/>
+    <line x1="650" y1="772" x2="850" y2="772" stroke="#C0492C" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="500" cy="772" r="8" fill="#C0492C"/>
+  </g>
+
+  <!-- Sublabel small-caps Oswald, generous tracking, Cobre -->
+  <text x="500" y="790"
+        font-family="'Oswald','Arial Narrow',sans-serif"
+        font-weight="600"
+        font-size="58"
+        letter-spacing="14"
+        text-anchor="middle"
+        fill="#C0492C">JEFA · REINA · Y TODO</text>
+</svg>

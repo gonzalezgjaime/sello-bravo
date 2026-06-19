@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <!-- Sello Bravo · TAPATIO DE CORAZON · mug · transparent bg -->
+
+  <!-- ===== EMBLEM: colonial 'cantera' arch silhouette + tiny star ===== -->
+  <g>
+    <!-- Tiny star above the arch -->
+    <path d="M500 132
+             L512 168 L549 168 L519 191 L530 227
+             L500 205 L470 227 L481 191 L451 168 L488 168 Z"
+          fill="#C0492C"/>
+
+    <!-- Cantera arch: solid Ambar silhouette with carved opening (Hueso negative) -->
+    <g>
+      <!-- Outer block of the arch (piers + rounded top) -->
+      <path d="M338 372
+               L338 286
+               C338 196 410 252 500 252
+               C590 252 662 196 662 286
+               L662 372 Z"
+            fill="#E2A53C"/>
+      <!-- Carved inner opening -->
+      <path d="M378 372
+               L378 300
+               C378 232 430 290 500 290
+               C570 290 622 232 622 300
+               L622 372 Z"
+            fill="#F3EADB"/>
+      <!-- Keystone -->
+      <path d="M478 244 L522 244 L532 286 L468 286 Z" fill="#C0492C"/>
+      <!-- Base plinth tying the piers -->
+      <rect x="322" y="372" width="356" height="20" fill="#E2A53C"/>
+    </g>
+  </g>
+
+  <!-- ===== TYPE LOCKUP (the hero) ===== -->
+  <g fill="#1B1714" text-anchor="middle">
+    <!-- Line 1 -->
+    <text x="500" y="568" font-family="'Anton',Impact,sans-serif"
+          font-size="190" letter-spacing="8" fill="#C0492C">TAPATÍO</text>
+
+    <!-- Line 2 split for accent on DE -->
+    <text x="500" y="740" font-family="'Anton',Impact,sans-serif"
+          font-size="190" letter-spacing="6">DE CORAZÓN</text>
+  </g>
+
+  <!-- Hairline rules flanking sublabel -->
+  <g stroke="#C0492C" stroke-width="4">
+    <line x1="252" y1="812" x2="372" y2="812"/>
+    <line x1="628" y1="812" x2="748" y2="812"/>
+  </g>
+  <!-- small diamond accents on rules -->
+  <g fill="#C0492C">
+    <path d="M500 800 L512 812 L500 824 L488 812 Z" opacity="0"/>
+    <circle cx="500" cy="812" r="6"/>
+  </g>
+
+  <!-- ===== SUBLABEL (Oswald small caps, generous tracking) ===== -->
+  <text x="500" y="822" text-anchor="middle"
+        font-family="'Oswald','Arial Narrow',sans-serif" font-weight="600"
+        font-size="42" letter-spacing="14" fill="#1B1714">GUADALAJARA · JALISCO</text>
+</svg>
