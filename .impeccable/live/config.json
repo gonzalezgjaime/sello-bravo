@@ -1,0 +1,7 @@
+{
+  "files": ["brand/**/*.html"],
+  "exclude": ["brand/logo/*.html", "brand/logo-export.html"],
+  "insertBefore": "</body>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}

@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-02T00:00:00Z",
+  "title": "Design System: Sello Bravo",
+  "extensions": {
+    "colorMeta": {
+      "cobre": { "role": "primary", "displayName": "Cobre", "canonical": "oklch(56.2% 0.1591 34.9)", "tonalRamp": ["#1D0200", "#480C00", "#791B01", "#A83214", "#D0573A", "#F87B5D", "#FFB4A1", "#FFE9E3"] },
+      "tinta": { "role": "secondary", "displayName": "Tinta (print ink)", "canonical": "oklch(20.8% 0.0087 59.2)", "tonalRamp": ["#0E0A08", "#282421", "#46413D", "#65605C", "#86817D", "#A9A4A0", "#CEC8C4", "#F3EDE9"] },
+      "tinta-profunda": { "role": "secondary", "displayName": "Tinta Profunda (web ground)", "canonical": "oklch(17.2% 0.0041 106.8)", "tonalRamp": ["#0B0B09", "#252523", "#424240", "#61615F", "#828280", "#A5A5A2", "#C9C9C6", "#EFEFEC"] },
+      "fondo-hondo": { "role": "secondary", "displayName": "Fondo Hondo", "canonical": "oklch(14.4% 0.0022 106.7)", "tonalRamp": ["#0B0B0A", "#252524", "#424241", "#616160", "#828281", "#A5A5A3", "#C9C9C7", "#EEEEED"] },
+      "hueso": { "role": "neutral", "displayName": "Hueso", "canonical": "oklch(94.0% 0.0222 80.7)", "tonalRamp": ["#100A02", "#2B2419", "#484135", "#686053", "#898174", "#ACA496", "#D1C8B9", "#F6EDDE"] },
+      "nopal": { "role": "tertiary", "displayName": "Nopal", "canonical": "oklch(44.1% 0.0556 173.2)", "tonalRamp": ["#000F0A", "#002D23", "#1D4C3F", "#3E6C5E", "#5F8E7F", "#81B1A2", "#A5D6C6", "#C9FBEB"] },
+      "ambar": { "role": "tertiary", "displayName": "Ámbar (fills only)", "canonical": "oklch(76.2% 0.1373 77.1)", "tonalRamp": ["#130900", "#342100", "#593B00", "#815805", "#AC7707", "#D5982B", "#FBBD57", "#FFECD0"] },
+      "ambar-oscuro": { "role": "tertiary", "displayName": "Ámbar Oscuro (amber text)", "canonical": "oklch(56.1% 0.1129 76.1)", "tonalRamp": ["#130900", "#342101", "#593B02", "#825801", "#A97825", "#CD9B4D", "#F3BF71", "#FFEBD0"] },
+      "rosa": { "role": "tertiary", "displayName": "Rosa Mexicano (print-side pop)", "canonical": "oklch(58.0% 0.1983 4.8)", "tonalRamp": ["#1E0008", "#4A011E", "#7C0237", "#B10C53", "#DC3C73", "#FE6C96", "#FFAFC1", "#FFE8EC"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display (Bebas Neue)", "purpose": "Hero headline only; second line takes Cobre. Web track — print art uses Anton instead." },
+      "headline": { "displayName": "Headline (Bebas Neue)", "purpose": "Section headings, store CTA headings, card art text." },
+      "title": { "displayName": "Title (Bebas Neue)", "purpose": "Wordmark, store links, swatch names — 20–24px, 0.04–0.06em." },
+      "body": { "displayName": "Body (Bitter)", "purpose": "The only font allowed to speak in sentences; shared by web and print tracks." },
+      "label": { "displayName": "Label (Special Elite)", "purpose": "Typewriter metadata voice: nav links, eyebrows (0.28em), tags, footer meta. Uppercase, never below 10px." }
+    },
+    "shadows": [
+      { "name": "card-lift", "value": "0 12px 32px -12px rgba(0,0,0,0.5)", "purpose": "Product card hover only, paired with translateY(-3px). Never at rest." },
+      { "name": "copper-glow", "value": "drop-shadow(0 0 50px rgba(192,73,44,0.28))", "purpose": "Hero press-die mark only — lamplight on metal, not UI elevation." }
+    ],
+    "motion": [
+      { "name": "press-in", "value": "0.8s cubic-bezier(0.2, 0.9, 0.3, 1) both", "purpose": "Stamp-landing entrance for the hero mark: scale 1.1→1 with blur settling." },
+      { "name": "pulse", "value": "2.4s ease-in-out infinite", "purpose": "Live copper dot on store links/badges. Must pause under prefers-reduced-motion." },
+      { "name": "state-change", "value": "0.22s ease", "purpose": "Default transition for hovers: border-color, color, transform, box-shadow." }
+    ],
+    "breakpoints": [
+      { "name": "nav-collapse", "value": "600px" },
+      { "name": "hero-stack", "value": "760px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "CTA Button (nav)",
+      "kind": "button",
+      "refersTo": "button-cta",
+      "description": "Outlined copper typewriter button that inverts to solid copper on hover — the press coming down.",
+      "html": "<button class=\"ds-btn-cta\">Visita la tienda</button>",
+      "css": ".ds-btn-cta { background: transparent; color: #C0492C; border: 1px solid rgba(192,73,44,0.4); border-radius: 0; padding: 6px 14px; font-family: 'Special Elite', Courier, monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: color 0.22s ease, border-color 0.22s ease, background 0.22s ease; } .ds-btn-cta:hover { background: #C0492C; color: #10100E; border-color: #C0492C; } .ds-btn-cta:focus-visible { outline: 2px solid #C0492C; outline-offset: 3px; }"
+    },
+    {
+      "name": "Store Link (large)",
+      "kind": "button",
+      "refersTo": "store-link",
+      "description": "Large Bebas outlined link with a pulsing copper live-dot; border and text turn copper on hover.",
+      "html": "<a href=\"#\" class=\"ds-store-link\"><span class=\"ds-store-link-dot\"></span>Mercado Libre</a>",
+      "css": ".ds-store-link { display: inline-flex; align-items: center; gap: 12px; font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-size: 22px; letter-spacing: 0.06em; text-transform: uppercase; color: #F3EADB; text-decoration: none; padding: 16px 32px; border: 1.5px solid rgba(243,234,219,0.14); border-radius: 0; transition: border-color 0.22s ease, color 0.22s ease; } .ds-store-link:hover { border-color: #C0492C; color: #C0492C; } .ds-store-link:focus-visible { outline: 2px solid #C0492C; outline-offset: 3px; } .ds-store-link-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(192,73,44,0.6); animation: ds-pulse 2.4s ease-in-out infinite; } @keyframes ds-pulse { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.35); opacity: 1; } } @media (prefers-reduced-motion: reduce) { .ds-store-link-dot { animation: none; opacity: 0.8; } }"
+    },
+    {
+      "name": "Product Card",
+      "kind": "card",
+      "refersTo": "card-product",
+      "description": "Hueso paper card, sharp corners: typewriter header with tag, huge Bebas art text with copper second line, hairline foot. Lifts on hover.",
+      "html": "<article class=\"ds-card\"><div class=\"ds-card-head\"><span class=\"ds-card-type\">Playera · DTG</span><span class=\"ds-tag-ev\">Evergreen</span></div><div class=\"ds-card-art\">Orgullo<br><span class=\"ds-card-art2\">Mexicano</span></div><div class=\"ds-card-foot\"><span class=\"ds-card-name\">Sello clásico v1</span></div></article>",
+      "css": ".ds-card { background: #F3EADB; color: #10100E; border-radius: 0; padding: 28px 26px 22px; max-width: 300px; transition: transform 0.22s ease, box-shadow 0.22s ease; } .ds-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px -12px rgba(0,0,0,0.5); } @media (prefers-reduced-motion: reduce) { .ds-card:hover { transform: none; } } .ds-card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; } .ds-card-type { font-family: 'Special Elite', Courier, monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(27,23,20,0.62); } .ds-card-art { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-size: 44px; line-height: 0.86; text-transform: uppercase; min-height: 88px; } .ds-card-art2 { color: #C0492C; } .ds-card-foot { border-top: 1px solid rgba(27,23,20,0.08); padding-top: 12px; margin-top: 16px; } .ds-card-name { font-family: 'Special Elite', Courier, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(27,23,20,0.62); } .ds-tag-ev { font-family: 'Special Elite', Courier, monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; background: rgba(47,93,80,0.12); color: #2F5D50; }"
+    },
+    {
+      "name": "Evergreen Chip",
+      "kind": "chip",
+      "refersTo": "tag-evergreen",
+      "description": "Tiny typewriter chip on a 12% Nopal tint — the system's only rounded corners (2px).",
+      "html": "<span class=\"ds-chip-ev\">Evergreen</span>",
+      "css": ".ds-chip-ev { font-family: 'Special Elite', Courier, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; background: rgba(47,93,80,0.12); color: #2F5D50; }"
+    },
+    {
+      "name": "Seasonal Chip",
+      "kind": "chip",
+      "refersTo": "tag-seasonal",
+      "description": "Seasonal variant: Ámbar Oscuro text on a 12% Ámbar tint — raw Ámbar is never used as text.",
+      "html": "<span class=\"ds-chip-seas\">Junio – Julio</span>",
+      "css": ".ds-chip-seas { font-family: 'Special Elite', Courier, monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; background: rgba(226,165,60,0.12); color: #9A6A10; }"
+    },
+    {
+      "name": "Section Header",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "The system's one licensed kicker: copper typewriter label beside a short copper rule, then the Bebas headline.",
+      "html": "<header class=\"ds-section-head\"><div class=\"ds-section-pre\"><span class=\"ds-section-label\">La colección</span><span class=\"ds-section-rule\"></span></div><h2 class=\"ds-section-h2\">Lo nuestro,<br>bien hecho</h2></header>",
+      "css": ".ds-section-head { background: #10100E; padding: 24px; } .ds-section-pre { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; } .ds-section-label { font-family: 'Special Elite', Courier, monospace; font-size: 10.5px; letter-spacing: 0.28em; text-transform: uppercase; color: #C0492C; } .ds-section-rule { flex: 1; height: 1px; background: rgba(192,73,44,0.18); max-width: 120px; } .ds-section-h2 { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-size: clamp(36px, 6vw, 68px); line-height: 0.88; letter-spacing: 0.04em; text-transform: uppercase; color: #F3EADB; margin: 0; }"
+    },
+    {
+      "name": "Nav Bar",
+      "kind": "nav",
+      "refersTo": "button-cta",
+      "description": "Fixed 58px translucent dark bar with blur and copper hairline; Bebas wordmark left, typewriter links right.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-name\">Sello Bravo</span><span class=\"ds-nav-links\"><a href=\"#\" class=\"ds-nav-link\">La colección</a><a href=\"#\" class=\"ds-nav-link\">La marca</a><a href=\"#\" class=\"ds-nav-cta\">Tienda</a></span></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; height: 58px; padding: 0 24px; background: rgba(10,10,9,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(192,73,44,0.18); } .ds-nav-name { font-family: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif; font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase; color: #F3EADB; } .ds-nav-links { display: flex; align-items: center; gap: 24px; } .ds-nav-link { font-family: 'Special Elite', Courier, monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(243,234,219,0.58); text-decoration: none; transition: color 0.22s ease; } .ds-nav-link:hover { color: #F3EADB; } .ds-nav-link:focus-visible, .ds-nav-cta:focus-visible { outline: 2px solid #C0492C; outline-offset: 3px; } .ds-nav-cta { font-family: 'Special Elite', Courier, monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #C0492C; text-decoration: none; border: 1px solid rgba(192,73,44,0.4); padding: 6px 14px; transition: color 0.22s ease, border-color 0.22s ease, background 0.22s ease; } .ds-nav-cta:hover { background: #C0492C; color: #10100E; border-color: #C0492C; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La Imprenta de Noche",
+    "overview": "A letterpress workshop after dark. Copper ink under a work lamp, bone paper on the bench, ledger lines ruled across the ground, film grain in the air. Every surface behaves like a print artifact: the seal comes down, the ink bites, the edge stays sharp. The shipping site is the workshop at night — near-black ground (#10100E), copper (#C0492C) doing all the talking, bone (#F3EADB) as both paper and voice.\n\nThis is a two-track system, by explicit decision. Track one is the web system: Bebas Neue display + Special Elite labels + Bitter body on the dark ground — what ships at sellobravo.com. Track two is the print system for product art: Anton display + Oswald labels, Tinta ink #1B1714 on Hueso/white. The two tracks share the palette, the seal devices, and the voice; they never swap typefaces.",
+    "keyCharacteristics": [
+      "Dark letterpress ground; copper is the single loud voice (Committed strategy)",
+      "Everything sharp-cornered; the only radii are 2px chips and round dots",
+      "Material depth (grain, paper noise, copper hairlines), not shadow depth",
+      "Typewriter metadata voice (Special Elite) against condensed display shouting (Bebas Neue)",
+      "The press-die lockup and 8-leaf maguey star recur as nav icon, watermark, and footer mark",
+      "Two tracks, one brand: web (Bebas/Special Elite) and print (Anton/Oswald), never mixed"
+    ],
+    "rules": [
+      { "name": "The Two Inks Rule", "body": "Tinta #1B1714 is print ink; Tinta Profunda #10100E is the web ground. They are different tokens with different jobs. Never swap them, never invent a third near-black (#12100E is dead; --bone and --mid are dead tokens — delete on sight).", "section": "colors" },
+      { "name": "The Copper Hairline Rule", "body": "Structure on the dark ground is drawn with 1px copper transparencies (rgba(192,73,44, 0.10–0.18)), not gray borders, not box shadows.", "section": "colors" },
+      { "name": "The Legible Alpha Rule", "body": "On #10100E, Hueso alphas below 0.55 fail AA for body-size text (0.42 computes to ~3.6:1, 0.2 to ~1.7:1). Text that must be read uses α ≥ 0.58; alphas 0.14–0.45 are reserved for decorative/duplicated content only. Ink-on-paper text uses rgba(27,23,20, α) with α ≥ 0.62.", "section": "colors" },
+      { "name": "The Two Voices Rule", "body": "Bebas Neue shouts on the web; Anton shouts on garments. Special Elite labels the web; Oswald labels the seal and print art. Bitter is the only shared voice. Mixing tracks on one surface is forbidden.", "section": "typography" },
+      { "name": "The Outlined Type Rule", "body": "No live <text> in distributed SVG. Every logo or design SVG that leaves the repo has its type converted to paths (web marks from Bebas Neue, print art from Anton). Impact appearing in a rendered asset means this rule was broken.", "section": "typography" },
+      { "name": "The Thumbnail Rule", "body": "Every composition must survive shrinking to a marketplace thumbnail: one dominant element, line-heights tight, hierarchy readable at 120px wide.", "section": "typography" },
+      { "name": "The Ink, Not Air Rule", "body": "If a surface needs to feel distinct at rest, give it texture, a hairline, or a different ground color — never a resting shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do carry all structure on the dark ground with copper hairlines (rgba(192,73,44, 0.10–0.18)) and material texture — grain, paper noise, ledger lines.",
+      "Do keep text-bearing Hueso alphas ≥ 0.58 on #10100E (The Legible Alpha Rule) and use Ámbar Oscuro #9A6A10 for any amber text.",
+      "Do ship a prefers-reduced-motion: reduce alternative for every animation (pulse dots, press-in entrances, drawer slides, smooth scroll) — and a designed :focus-visible state on every interactive element. The existing pages owe this debt; new work never adds to it.",
+      "Do outline all SVG type to paths before an asset leaves the repo (web marks in Bebas Neue, print art in Anton).",
+      "Do keep the two tracks pure: Bebas Neue + Special Elite on web surfaces; Anton + Oswald on product art; Bitter for prose everywhere.",
+      "Do write copy Spanish-first, short and witty, and alt text in brand voice, in Spanish."
+    ],
+    "donts": [
+      "Don't reach for touristy-kitsch or the flag-cliché — no sombreros, no serape gradients, no green-white-red palette shortcuts, no \"auténtico mexicano™\" tropes.",
+      "Don't drift into sad-beige minimalism: warmth comes from copper, paper texture, and voice — never from a cream body background or gray-on-gray restraint.",
+      "Don't use generic AI landing-page grammar: uniform icon-card grids, a tracked uppercase eyebrow above every section (the section-header device is the one licensed kicker), gradient text, hero-metric blocks, or side-stripe borders.",
+      "Don't invent near-blacks or resurrect dead tokens: #12100E, --bone, --mid, and #B07D20 are retired; the only darks are Tinta #1B1714 (print), Tinta Profunda #10100E (web), and Fondo Hondo #0A0A09.",
+      "Don't round corners beyond the 2px chip radius, add resting shadows, or gradiate/shadow the Cobre marks (the seal is one-color by design).",
+      "Don't ship a web surface in Anton/Oswald or product art in Bebas Neue/Special Elite — if the store page goes live, it is retrofitted to the web track first.",
+      "Don't put live <text> in distributed SVGs — Impact leaking into rendered assets is the tell that type wasn't outlined."
+    ]
+  }
+}
