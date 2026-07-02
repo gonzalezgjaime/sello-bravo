@@ -3,7 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sello Bravo</title>
+<title>Sello Bravo — Orgullo con sello propio</title>
+<meta name="description" content="Sello Bravo — orgullo con sello propio. Tazas, playeras y prints con carácter mexicano, disponibles en Amazon México y Mercado Libre.">
+<meta name="theme-color" content="#10100E">
+<meta property="og:title" content="Sello Bravo — Orgullo con sello propio">
+<meta property="og:description" content="Tazas, playeras y prints con carácter mexicano. Cada pieza lleva el sello.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sellobravo.com/">
+<meta property="og:image" content="https://sellobravo.com/og.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,19 +18,19 @@
 <style>
 :root{
   --ink:#C0492C;
+  --ink-lite:#D65A3C;
   --dark:#10100E;
   --darker:#0A0A09;
   --paper:#F3EADB;
-  --bone:#E5D9C8;
-  --mid:#2A2520;
-  --muted:rgba(243,234,219,0.42);
+  --muted:rgba(243,234,219,0.6);
   --bebe:'Bebas Neue',Impact,'Arial Narrow',sans-serif;
   --sp:'Special Elite',Courier,monospace;
   --bit:'Bitter',Georgia,serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 body{background:var(--dark);color:var(--paper);font-family:var(--bit);overflow-x:hidden}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 
 /* grain */
 body::before{
@@ -60,17 +67,20 @@ nav{
 }
 .nav-links a:hover{color:var(--paper)}
 .nav-links a.store-cta{
-  color:var(--ink);
+  color:var(--ink-lite);
   border:1px solid rgba(192,73,44,0.4);
   padding:6px 14px;
   transition:color 0.2s,border-color 0.2s,background 0.2s;
 }
 .nav-links a.store-cta:hover{
-  background:var(--ink);color:var(--dark);border-color:var(--ink);
+  background:var(--ink-lite);color:var(--dark);border-color:var(--ink-lite);
 }
 @media(max-width:600px){
+  nav{padding:0 20px}
+  .nav-name{white-space:nowrap}
   .nav-links{gap:16px}
   .nav-links a:not(.store-cta){display:none}
+  .nav-links a.store-cta{padding:12px;white-space:nowrap}
 }
 
 /* ── HERO ── */
@@ -94,6 +104,7 @@ nav{
   display:flex;align-items:center;justify-content:center;
   padding:80px 40px 80px 64px;
   position:relative;z-index:2;
+  min-width:0;
 }
 .hero-mark{
   width:min(420px,50vw);height:auto;
@@ -109,10 +120,11 @@ nav{
   padding:80px 64px 80px 40px;
   position:relative;z-index:2;
   border-left:1px solid rgba(192,73,44,0.12);
+  min-width:0;
 }
 .hero-eyebrow{
   font-family:var(--sp);font-size:11px;letter-spacing:0.28em;
-  text-transform:uppercase;color:rgba(243,234,219,0.35);
+  text-transform:uppercase;color:rgba(243,234,219,0.62);
   margin-bottom:14px;
 }
 .hero-h1{
@@ -130,7 +142,7 @@ nav{
 }
 .hero-p{
   font-size:17px;line-height:1.7;
-  color:rgba(243,234,219,0.58);
+  color:rgba(243,234,219,0.65);
   max-width:380px;
 }
 .hero-stores{
@@ -143,7 +155,7 @@ nav{
   text-transform:uppercase;text-decoration:none;
   padding:10px 18px;
   border:1px solid rgba(243,234,219,0.15);
-  color:rgba(243,234,219,0.45);
+  color:rgba(243,234,219,0.65);
   transition:color 0.2s,border-color 0.2s;
 }
 .store-badge:hover{color:var(--paper);border-color:rgba(243,234,219,0.35)}
@@ -153,13 +165,13 @@ nav{
   animation:pulse 2.4s ease-in-out infinite;
 }
 @keyframes pulse{0%,100%{opacity:0.4;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
-.soon{font-size:9px;letter-spacing:0.14em;opacity:0.5}
+.soon{font-size:10px;letter-spacing:0.14em;color:rgba(243,234,219,0.6);white-space:nowrap}
 
 @media(max-width:760px){
   .hero{grid-template-columns:1fr;text-align:center}
   .hero-left{padding:80px 32px 20px;justify-content:center}
   .hero-mark{width:min(220px,60vw)}
-  .hero-right{padding:24px 32px 72px;border-left:none;border-top:1px solid rgba(192,73,44,0.12)}
+  .hero-right{padding:24px 28px 72px;border-left:none;border-top:1px solid rgba(192,73,44,0.12)}
   .hero-rule{margin:20px auto}
   .hero-p{max-width:none}
   .hero-stores{justify-content:center}
@@ -173,8 +185,8 @@ section{padding:88px 0}
   margin-bottom:36px;
 }
 .s-label{
-  font-family:var(--sp);font-size:10.5px;letter-spacing:0.28em;
-  text-transform:uppercase;color:var(--ink);
+  font-family:var(--sp);font-size:10.5px;font-weight:400;letter-spacing:0.28em;
+  text-transform:uppercase;color:var(--ink-lite);
 }
 .s-rule{flex:1;height:1px;background:rgba(192,73,44,0.18);max-width:120px}
 .s-h2{
@@ -187,7 +199,7 @@ section{padding:88px 0}
 .collection{background:var(--darker);border-top:1px solid rgba(192,73,44,0.1);border-bottom:1px solid rgba(192,73,44,0.1)}
 .product-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr));
   gap:16px;
   margin-top:8px;
 }
@@ -213,16 +225,16 @@ section{padding:88px 0}
   margin-bottom:18px;
 }
 .pcard-type{
-  font-family:var(--sp);font-size:9.5px;letter-spacing:0.2em;
-  text-transform:uppercase;color:rgba(27,23,20,0.38);
+  font-family:var(--sp);font-size:10px;letter-spacing:0.2em;
+  text-transform:uppercase;color:rgba(27,23,20,0.66);
 }
 .pcard-tag{
-  font-family:var(--sp);font-size:9px;letter-spacing:0.1em;
+  font-family:var(--sp);font-size:10px;letter-spacing:0.1em;
   text-transform:uppercase;padding:3px 8px;
   border-radius:2px;
 }
 .pcard-tag.ev{background:rgba(47,93,80,0.12);color:#2F5D50}
-.pcard-tag.seas{background:rgba(226,165,60,0.12);color:#B07D20}
+.pcard-tag.seas{background:rgba(226,165,60,0.12);color:#7A540D}
 
 .pcard-art{
   font-family:var(--bebe);
@@ -242,7 +254,7 @@ section{padding:88px 0}
 }
 .pcard-name{
   font-family:var(--sp);font-size:10.5px;letter-spacing:0.06em;
-  color:rgba(27,23,20,0.42);line-height:1.4;
+  color:rgba(27,23,20,0.66);line-height:1.4;
 }
 .pcard-wm{
   width:28px;height:28px;color:var(--ink);opacity:0.15;flex-shrink:0;
@@ -251,28 +263,24 @@ section{padding:88px 0}
 /* ── PALETTE STRIP ── */
 .palette-strip{
   border-top:1px solid rgba(192,73,44,0.1);
-  padding:72px 0;
 }
 .pal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:8px}
-.sw{height:108px;display:flex;align-items:flex-end;padding:14px 16px}
-.sw-meta{display:flex;flex-direction:column}
-.sw-name{font-family:var(--bebe);font-size:22px;letter-spacing:0.04em;line-height:1}
-.sw-hex{font-family:var(--sp);font-size:10px;letter-spacing:0.06em;opacity:0.6;margin-top:2px}
+.sw{height:108px}
+.sw-meta{display:flex;flex-direction:column;margin-top:12px}
+.sw-name{font-family:var(--bebe);font-size:22px;letter-spacing:0.04em;line-height:1;color:var(--paper)}
+.sw-hex{font-family:var(--sp);font-size:10px;letter-spacing:0.06em;color:rgba(243,234,219,0.62);margin-top:3px}
 
 /* ── ABOUT STRIP ── */
 .about{
   border-top:1px solid rgba(192,73,44,0.1);
   display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:start;
+  padding:88px 44px;max-width:1100px;margin:0 auto;
 }
 .about-mark{color:var(--ink);width:min(180px,30vw);height:auto}
-.about-body h2{
-  font-family:var(--bebe);
-  font-size:clamp(34px,5vw,60px);
-  line-height:0.88;margin-bottom:22px;
-}
+.about-body h2{margin-bottom:22px}
 .about-body p{
   font-size:16.5px;line-height:1.75;
-  color:rgba(243,234,219,0.56);max-width:560px;
+  color:rgba(243,234,219,0.62);max-width:560px;
 }
 .about-body p + p{margin-top:14px}
 @media(max-width:680px){
@@ -287,11 +295,7 @@ section{padding:88px 0}
   padding:88px 44px;
   background:var(--darker);
 }
-.stores-cta h2{
-  font-family:var(--bebe);
-  font-size:clamp(38px,7vw,88px);
-  line-height:0.88;margin-bottom:16px;
-}
+.stores-cta h2{margin-bottom:16px}
 .stores-cta p{
   font-family:var(--sp);font-size:13px;letter-spacing:0.1em;
   color:var(--muted);margin-bottom:40px;
@@ -307,16 +311,12 @@ section{padding:88px 0}
   border:1.5px solid rgba(243,234,219,0.14);
   transition:border-color 0.22s,color 0.22s;
 }
-.store-link:hover{border-color:var(--ink);color:var(--ink)}
+.store-link:hover{border-color:var(--ink-lite);color:var(--ink-lite)}
+.store-link:not([href]){cursor:default}
 .store-link .badge-dot{
   width:8px;height:8px;border-radius:50%;
   background:rgba(192,73,44,0.5);
   animation:pulse 2.4s ease-in-out infinite;
-}
-.soon-note{
-  margin-top:20px;
-  font-family:var(--sp);font-size:11px;letter-spacing:0.16em;
-  color:rgba(243,234,219,0.22);
 }
 
 /* ── FOOTER ── */
@@ -327,7 +327,6 @@ footer{
   justify-content:space-between;gap:28px;
   max-width:none;
 }
-.foot-left{}
 .foot-logo{
   display:flex;align-items:center;gap:12px;
 }
@@ -337,11 +336,17 @@ footer{
 }
 .foot-sub{
   font-family:var(--sp);font-size:11px;letter-spacing:0.14em;
-  color:rgba(243,234,219,0.24);margin-top:10px;
+  color:rgba(243,234,219,0.6);margin-top:10px;
 }
 .foot-right{
   font-family:var(--sp);font-size:11px;letter-spacing:0.1em;
-  color:rgba(243,234,219,0.2);text-align:right;line-height:2;
+  color:rgba(243,234,219,0.6);text-align:right;line-height:2;
+}
+
+/* ── REDUCED MOTION ── */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .pcard:hover{transform:none}
 }
 </style>
 </head>
@@ -409,7 +414,7 @@ footer{
 <!-- ── NAV ── -->
 <nav>
   <a class="nav-logo" href="#">
-    <svg class="nav-star"><use href="#mark-star"/></svg>
+    <svg class="nav-star" aria-hidden="true"><use href="#mark-star"/></svg>
     <span class="nav-name">SELLO BRAVO</span>
   </a>
   <div class="nav-links">
@@ -422,7 +427,7 @@ footer{
 <!-- ── HERO ── -->
 <section class="hero" aria-label="Sello Bravo">
   <div class="hero-left">
-    <svg class="hero-mark" viewBox="0 0 280 380">
+    <svg class="hero-mark" viewBox="0 0 280 380" aria-hidden="true">
       <use href="#mark-full"/>
     </svg>
   </div>
@@ -453,13 +458,13 @@ footer{
 <section class="collection" id="coleccion">
   <div class="wrap">
     <div class="s-pre">
-      <span class="s-label">La colección</span>
+      <h2 class="s-label">La colección</h2>
       <div class="s-rule"></div>
     </div>
-    <div class="product-grid">
+    <div class="product-grid" role="list">
 
       <!-- 1 -->
-      <div class="pcard">
+      <div class="pcard" role="listitem">
         <div class="pcard-header">
           <span class="pcard-type">Taza · 11 oz</span>
           <span class="pcard-tag ev">Evergreen</span>
@@ -470,12 +475,12 @@ footer{
         </div>
         <div class="pcard-foot">
           <span class="pcard-name">Humor de profesión</span>
-          <svg class="pcard-wm"><use href="#mark-star"/></svg>
+          <svg class="pcard-wm" aria-hidden="true"><use href="#mark-star"/></svg>
         </div>
       </div>
 
       <!-- 2 -->
-      <div class="pcard">
+      <div class="pcard" role="listitem">
         <div class="pcard-header">
           <span class="pcard-type">Taza · 11 oz</span>
           <span class="pcard-tag ev">Evergreen</span>
@@ -485,13 +490,13 @@ footer{
           <span class="sm">CORAZÓN<br>DE ACERO</span>
         </div>
         <div class="pcard-foot">
-          <span class="pcard-name">Plantilla de oficio</span>
-          <svg class="pcard-wm"><use href="#mark-star"/></svg>
+          <span class="pcard-name">Orgullo de oficio</span>
+          <svg class="pcard-wm" aria-hidden="true"><use href="#mark-star"/></svg>
         </div>
       </div>
 
       <!-- 3 -->
-      <div class="pcard">
+      <div class="pcard" role="listitem">
         <div class="pcard-header">
           <span class="pcard-type">Taza · 11 oz</span>
           <span class="pcard-tag seas">10 Mayo</span>
@@ -502,12 +507,12 @@ footer{
         </div>
         <div class="pcard-foot">
           <span class="pcard-name">Día de las Madres</span>
-          <svg class="pcard-wm"><use href="#mark-star"/></svg>
+          <svg class="pcard-wm" aria-hidden="true"><use href="#mark-star"/></svg>
         </div>
       </div>
 
       <!-- 4 -->
-      <div class="pcard">
+      <div class="pcard" role="listitem">
         <div class="pcard-header">
           <span class="pcard-type">Taza · 11 oz</span>
           <span class="pcard-tag seas">15 Mayo</span>
@@ -518,12 +523,12 @@ footer{
         </div>
         <div class="pcard-foot">
           <span class="pcard-name">Día del Maestro</span>
-          <svg class="pcard-wm"><use href="#mark-star"/></svg>
+          <svg class="pcard-wm" aria-hidden="true"><use href="#mark-star"/></svg>
         </div>
       </div>
 
       <!-- 5 -->
-      <div class="pcard">
+      <div class="pcard" role="listitem">
         <div class="pcard-header">
           <span class="pcard-type">Playera</span>
           <span class="pcard-tag ev">Evergreen</span>
@@ -534,12 +539,12 @@ footer{
         </div>
         <div class="pcard-foot">
           <span class="pcard-name">Guadalajara · Jalisco</span>
-          <svg class="pcard-wm"><use href="#mark-star"/></svg>
+          <svg class="pcard-wm" aria-hidden="true"><use href="#mark-star"/></svg>
         </div>
       </div>
 
       <!-- 6 -->
-      <div class="pcard">
+      <div class="pcard" role="listitem">
         <div class="pcard-header">
           <span class="pcard-type">Playera</span>
           <span class="pcard-tag seas">Oct – Nov</span>
@@ -550,12 +555,12 @@ footer{
         </div>
         <div class="pcard-foot">
           <span class="pcard-name">Día de Muertos</span>
-          <svg class="pcard-wm"><use href="#mark-star"/></svg>
+          <svg class="pcard-wm" aria-hidden="true"><use href="#mark-star"/></svg>
         </div>
       </div>
 
       <!-- 7 -->
-      <div class="pcard">
+      <div class="pcard" role="listitem">
         <div class="pcard-header">
           <span class="pcard-type">Playera</span>
           <span class="pcard-tag seas">Mar – Jul</span>
@@ -566,12 +571,12 @@ footer{
         </div>
         <div class="pcard-foot">
           <span class="pcard-name">Personalizable · Premium</span>
-          <svg class="pcard-wm"><use href="#mark-star"/></svg>
+          <svg class="pcard-wm" aria-hidden="true"><use href="#mark-star"/></svg>
         </div>
       </div>
 
       <!-- 8 -->
-      <div class="pcard">
+      <div class="pcard" role="listitem">
         <div class="pcard-header">
           <span class="pcard-type">Taza · 11 oz</span>
           <span class="pcard-tag seas">Sept</span>
@@ -582,7 +587,7 @@ footer{
         </div>
         <div class="pcard-foot">
           <span class="pcard-name">Fiestas Patrias</span>
-          <svg class="pcard-wm"><use href="#mark-star"/></svg>
+          <svg class="pcard-wm" aria-hidden="true"><use href="#mark-star"/></svg>
         </div>
       </div>
 
@@ -594,62 +599,64 @@ footer{
 <section class="palette-strip">
   <div class="wrap">
     <div class="s-pre">
-      <span class="s-label">Paleta</span>
+      <h2 class="s-label">Paleta</h2>
       <div class="s-rule"></div>
     </div>
     <div class="pal-grid">
-      <div class="sw" style="background:#C0492C;color:#10100E">
-        <div class="sw-meta"><div class="sw-name">Cobre</div><div class="sw-hex">#C0492C</div></div>
+      <div class="pal-item">
+        <div class="sw" style="background:#C0492C"></div>
+        <div class="sw-meta"><span class="sw-name">Cobre</span><span class="sw-hex">#C0492C</span></div>
       </div>
-      <div class="sw" style="background:#10100E;color:#F3EADB">
-        <div class="sw-meta"><div class="sw-name">Tinta</div><div class="sw-hex">#10100E</div></div>
+      <div class="pal-item">
+        <div class="sw" style="background:#1B1714;border:1px solid rgba(192,73,44,0.14)"></div>
+        <div class="sw-meta"><span class="sw-name">Tinta</span><span class="sw-hex">#1B1714</span></div>
       </div>
-      <div class="sw" style="background:#F3EADB;color:#10100E;border:1px solid rgba(27,23,20,0.08)">
-        <div class="sw-meta"><div class="sw-name">Hueso</div><div class="sw-hex">#F3EADB</div></div>
+      <div class="pal-item">
+        <div class="sw" style="background:#F3EADB"></div>
+        <div class="sw-meta"><span class="sw-name">Hueso</span><span class="sw-hex">#F3EADB</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ── ABOUT ── -->
-<section class="about" style="padding:88px 44px;max-width:1100px;margin:0 auto">
-  <svg class="about-mark"><use href="#mark-full"/></svg>
+<section class="about">
+  <svg class="about-mark" viewBox="0 0 280 380" aria-hidden="true"><use href="#mark-full"/></svg>
   <div class="about-body">
-    <h2>HECHO<br>CON SELLO.</h2>
+    <h2 class="s-h2">HECHO<br>CON SELLO.</h2>
     <p>Merch mexicano de verdad — tazas, playeras y prints para gente que sabe lo que quiere. Sin inventario, sin bodega. Print-on-demand.</p>
-    <p>Disponible en Amazon México y Mercado Libre. Cada pieza se produce bajo pedido con los mismos estándares de calidad.</p>
+    <p>Disponible en Amazon México y Mercado Libre. Cada pieza se imprime bajo pedido, con el sello bien puesto.</p>
   </div>
 </section>
 
 <!-- ── STORES ── -->
 <section class="stores-cta" id="tiendas">
-  <h2>ENCUÉNTRANOS<br>EN LÍNEA</h2>
+  <h2 class="s-h2">ENCUÉNTRANOS<br>EN LÍNEA</h2>
   <p>Próximamente disponible en nuestras tiendas oficiales</p>
   <div class="store-links">
-    <a class="store-link" href="#">
+    <a class="store-link">
       <span class="badge-dot"></span>
       Amazon México
     </a>
-    <a class="store-link" href="#">
+    <a class="store-link">
       <span class="badge-dot"></span>
       Mercado Libre
     </a>
   </div>
-  <p class="soon-note">Las tiendas abren pronto · sellobravo.com</p>
 </section>
 
 <!-- ── FOOTER ── -->
 <footer>
   <div class="foot-left">
     <div class="foot-logo">
-      <svg><use href="#mark-star"/></svg>
+      <svg aria-hidden="true"><use href="#mark-star"/></svg>
       <span class="foot-name">SELLO BRAVO</span>
     </div>
-    <div class="foot-sub">sellobravo.com · Amazon México · Mercado Libre · Print-on-Demand</div>
+    <div class="foot-sub">sellobravo.com · Amazon&nbsp;México · Mercado&nbsp;Libre · Print&#8209;on&#8209;Demand</div>
   </div>
   <div class="foot-right">
     Merch · México<br>
-    © 2025 Sello Bravo
+    © 2026 Sello Bravo
   </div>
 </footer>
 

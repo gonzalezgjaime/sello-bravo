@@ -3,13 +3,14 @@ name: Sello Bravo
 description: Letterpress-dark brand system — copper ink and bone paper for a Mexican POD merch brand
 colors:
   cobre: "#C0492C"
+  cobre-claro: "#D65A3C"
   tinta: "#1B1714"
   tinta-profunda: "#10100E"
   fondo-hondo: "#0A0A09"
   hueso: "#F3EADB"
   nopal: "#2F5D50"
   ambar: "#E2A53C"
-  ambar-oscuro: "#9A6A10"
+  ambar-oscuro: "#7A540D"
   rosa: "#D2326B"
 typography:
   display:
@@ -51,15 +52,15 @@ spacing:
   link: "16px 32px"
   card: "28px 26px 22px"
   gutter: "40px"
-  section: "64px"
+  section: "88px"
 components:
   button-cta:
     backgroundColor: "transparent"
-    textColor: "{colors.cobre}"
+    textColor: "{colors.cobre-claro}"
     rounded: "{rounded.sharp}"
     padding: "{spacing.cta}"
   button-cta-hover:
-    backgroundColor: "{colors.cobre}"
+    backgroundColor: "{colors.cobre-claro}"
     textColor: "{colors.tinta-profunda}"
   store-link:
     backgroundColor: "transparent"
@@ -67,7 +68,7 @@ components:
     rounded: "{rounded.sharp}"
     padding: "{spacing.link}"
   store-link-hover:
-    textColor: "{colors.cobre}"
+    textColor: "{colors.cobre-claro}"
   card-product:
     backgroundColor: "{colors.hueso}"
     textColor: "{colors.tinta-profunda}"
@@ -128,10 +129,16 @@ A committed copper-on-dark palette: two inks, one paper, three controlled accent
 
 ### Primary
 - **Cobre** (`#C0492C`): the brand's voice. Logo marks, accent heading lines,
-  section labels, CTA text and hover fills, and every hairline border via
-  `rgba(192,73,44, α)` — α 0.04 for ledger lines, 0.10–0.18 for hairlines,
-  0.28 for the hero glow, 0.4 for CTA outlines. The only hex identical across
-  every surface in the repo. Never gradiated, never shadowed.
+  display-size accent type (≥24px), product-art depictions, and every hairline
+  border via `rgba(192,73,44, α)` — α 0.04 for ledger lines, 0.10–0.18 for
+  hairlines, 0.28 for the hero glow, 0.4 for CTA outlines. The only hex
+  identical across every surface in the repo. Never gradiated, never shadowed.
+- **Cobre Claro** (`#D65A3C`): the text tier of Cobre. Any copper text below
+  24px on a dark ground (section labels, nav CTA text, store-link hover) and
+  any solid copper fill carrying dark text (CTA hover) uses Cobre Claro — the
+  nearest copper that clears WCAG AA 4.5:1 on Tinta Profunda / Fondo Hondo
+  (4.9–5.1:1) and, inverted, under Tinta Profunda text (4.9:1). Never a
+  surface color; it exists only where copper must be read small.
 
 ### Secondary
 - **Tinta** (`#1B1714`): print ink. Type and line art on product designs;
@@ -147,9 +154,10 @@ A committed copper-on-dark palette: two inks, one paper, three controlled accent
   balance in print designs.
 - **Ámbar** (`#E2A53C`): fills and graphics only — seasonal tag tint
   backgrounds (12–15%), fiesta warmth in print art. Not for text.
-- **Ámbar Oscuro** (`#9A6A10`): the accessible text partner for Ámbar — all
-  seasonal/amber text on tinted or light backgrounds uses this, never raw
-  Ámbar and never the deprecated `#B07D20`.
+- **Ámbar Oscuro** (`#7A540D`): the accessible text partner for Ámbar — all
+  seasonal/amber text on tinted or light backgrounds uses this (5.3:1 on the
+  12% tint), never raw Ámbar and never the deprecated `#B07D20` or `#9A6A10`
+  (3.7:1 on the tint — passes only at large-text sizes).
 - **Rosa Mexicano** (`#D2326B`): print-side pop (quinceañera and mamá lines,
   "Personalizable" badges), ≤10% of any design. Currently absent from the web
   track by design; introducing it there is a deliberate decision, not a default.
@@ -174,6 +182,13 @@ for body-size text (0.42 computes to ~3.6:1, 0.2 to ~1.7:1). Text that must be
 read uses α ≥ 0.58; alphas 0.14–0.45 are reserved for decorative/duplicated
 content only. Same discipline for ink-on-paper: `rgba(27,23,20, α)` text
 uses α ≥ 0.62.
+
+**The Copper Text Rule.** Cobre `#C0492C` maxes out at 3.8–4.2:1 against the
+dark grounds and Hueso — AA for large text only. Copper text below 24px uses
+Cobre Claro `#D65A3C`, and dark-on-copper inversions use Cobre Claro as the
+fill (no text color passes 4.5:1 on solid `#C0492C`). The one sanctioned
+exception: card art that depicts a product design is brand art (WCAG logotype
+exemption) and keeps true Cobre.
 
 ## 3. Typography
 
@@ -239,12 +254,14 @@ pages predate this rule and owe it.
 
 ### Buttons
 - **Shape:** sharp (0px radius), always.
-- **CTA (nav):** transparent, Cobre text, 1px `rgba(192,73,44,0.4)` border,
+- **CTA (nav):** transparent, Cobre Claro text, 1px `rgba(192,73,44,0.4)` border,
   6px 14px, Special Elite 11px uppercase 0.14em.
-- **Hover:** inverts — solid Cobre fill, Tinta Profunda text. The press comes down.
+- **Hover:** inverts — solid Cobre Claro fill, Tinta Profunda text. The press
+  comes down. (True Cobre as a fill cannot carry AA text at this size — The
+  Copper Text Rule.)
 - **Store link (large):** Bebas Neue 22px, 16px 32px, 1.5px
   `rgba(243,234,219,0.14)` border, pulsing 8px copper dot; border and text turn
-  Cobre on hover.
+  Cobre Claro on hover.
 
 ### Chips
 - **Style:** Special Elite 9–10px uppercase, 0.1–0.2em tracking, 3px 8px,
@@ -268,9 +285,11 @@ pages predate this rule and owe it.
   bump to ≥0.58 when links carry sole navigation). Non-CTA links hide under 600px.
 
 ### Section Header (signature)
-Copper Special Elite label (10.5px, 0.28em tracking) beside a 1px copper rule
-(max 120px), then the Bebas headline. This is the system's one deliberate
-kicker device — it replaces, and forbids, generic eyebrows on every block.
+Cobre Claro Special Elite label (10.5px, 0.28em tracking) — marked up as an
+`<h2>` so every section enters the document heading outline — beside a 1px
+copper rule (max 120px), optionally followed by a Bebas `.s-h2` headline.
+This is the system's one deliberate kicker device — it replaces, and forbids,
+generic eyebrows on every block.
 
 ### The Press-Die Lockup & Maguey Star (signature)
 The primary web mark: double cut-corner border (6px + 1.8px strokes) with
@@ -288,7 +307,8 @@ and packaging.
   (`rgba(192,73,44, 0.10–0.18)`) and material texture — grain, paper noise,
   ledger lines.
 - **Do** keep text-bearing Hueso alphas ≥ 0.58 on `#10100E` (The Legible Alpha
-  Rule) and use Ámbar Oscuro `#9A6A10` for any amber text.
+  Rule), use Ámbar Oscuro `#7A540D` for any amber text, and Cobre Claro
+  `#D65A3C` for any copper text below 24px (The Copper Text Rule).
 - **Do** ship a `prefers-reduced-motion: reduce` alternative for every
   animation (pulse dots, press-in entrances, drawer slides, smooth scroll) —
   and a designed `:focus-visible` state on every interactive element. The
